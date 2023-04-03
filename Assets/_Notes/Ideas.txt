@@ -1,0 +1,21 @@
+-- Modular Objects -- 
+
+Hitbox: has target layer, has a damageinfo component, has an onhit unity event
+Weapon: has a hitbox, has an attack animation, cooldown is controlled by the animator, has an Attack() method
+
+--
+
+-- Prefab Variants --
+
+Hitbox: 
+Weapon:
+
+-- 
+
+the hazard object has a hitbox that doesn't move
+
+have spear and sword weapons that implement the modular weapons and hitboxes
+
+make the slime enemy use its body as a hitbox
+
+dismantle the "entity" parent
