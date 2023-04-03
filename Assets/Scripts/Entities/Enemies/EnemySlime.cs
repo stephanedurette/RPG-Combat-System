@@ -19,6 +19,7 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
     private Rigidbody2D rigidBody;
     private Animator animator;
     private Health health;
+    private Hitbox hitbox;
 
     private Vector2 lastMoveDirection = Vector2.zero;
 
@@ -79,12 +80,22 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
+        hitbox = GetComponentInChildren<Hitbox>();
 
         health.OnHealthEmpty += OnHealthEmpty;
+        hitbox.OnCollision += Hitbox_OnCollision;
     }
+
+    private void Hitbox_OnCollision(object sender, Hitbox.OnCollisionEventArgs e)
+    {
+        //set to opposite knockback state
+        Debug.Log("ouch");
+    }
+
     private void OnDisable()
     {
         health.OnHealthEmpty -= OnHealthEmpty;
+        hitbox.OnCollision -= Hitbox_OnCollision;
     }
 
     public void TakeDamage(UnityEngine.Object source, HitData hitData)
