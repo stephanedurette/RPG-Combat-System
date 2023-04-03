@@ -5,6 +5,12 @@ Weapon: has a hitbox, has an attack animation, cooldown is controlled by the ani
 
 --
 
+-- Interfaces --
+
+IDamageTaker: takes hitdata and the object that hit me
+
+--
+
 -- Prefab Variants --
 
 Hitbox: 

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySlime : Entity, IDamageTaker
+public class EnemySlime : Entity
 {
     [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float playerAggroDistance, playerAttackDistance;
@@ -88,13 +88,15 @@ public class EnemySlime : Entity, IDamageTaker
         }
     }
 
-    public override void TakeDamage(Vector3 sourcePosition, AttackAttributesSO attackAttributes)
+    public override void TakeDamage(Vector3 sourcePosition)
     {
+        /*
         health.ChangeHealth(-attackAttributes.damage);
 
         rigidBody.velocity = (transform.position - sourcePosition).normalized * attackAttributes.knockBackVelocity;
         knockedBack = true;
         stateMachine.SetState(3, new State.KnockbackStateEnterArgs() { knockBackTime = attackAttributes.knockBackTime, returnState = 1 });
+        */
     }
 
     internal override void OnHealthEmpty(object sender, EventArgs e)

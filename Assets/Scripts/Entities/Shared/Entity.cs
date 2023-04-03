@@ -7,12 +7,11 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(StateMachine))]
 
-public abstract class Entity : MonoBehaviour, IDamageTaker
+public abstract class Entity : MonoBehaviour
 {
     [SerializeField] internal float walkSpeed = 10f;
     [SerializeField] internal LayerMask attackTargets;
     [SerializeField] internal Health health;
-    [SerializeField] internal AttackAttributesSO attackAttributes;
 
     internal Vector2 lastMoveDirection = Vector2.zero;
 
@@ -20,7 +19,7 @@ public abstract class Entity : MonoBehaviour, IDamageTaker
     internal Animator animator;
     internal StateMachine stateMachine;
     
-    public abstract void TakeDamage(Vector3 sourcePosition, AttackAttributesSO attackAttributes);
+    public abstract void TakeDamage(Vector3 sourcePosition);
     internal void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -30,15 +29,17 @@ public abstract class Entity : MonoBehaviour, IDamageTaker
 
     internal void Attack(float attackRadius, float attackDistance)
     {
+        /*
         animator.SetTrigger("Attack");
-        Singleton.Instance.SoundManager.Play(attackAttributes.attackSound);
+        //Singleton.Instance.SoundManager.Play(attackAttributes.attackSound);
         var rayCastHit = Physics2D.CircleCast(transform.position, attackRadius, lastMoveDirection, attackDistance, attackTargets);
 
         if (rayCastHit && rayCastHit.collider.gameObject.TryGetComponent(out IDamageTaker damageTaker))
         {
-            Singleton.Instance.SoundManager.Play(attackAttributes.attackHitSound);
-            damageTaker.TakeDamage(transform.position, attackAttributes);
+            //Singleton.Instance.SoundManager.Play(attackAttributes.attackHitSound);
+            //damageTaker.TakeDamage(transform.position, attackAttributes);
         }
+        */
     }
 
     internal void OnEnable()
