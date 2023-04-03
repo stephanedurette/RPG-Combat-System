@@ -3,21 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class State : MonoBehaviour
+public abstract class State
 {
-    public class StateEnterArgs
-    {
-        
-    }
-
-
-    public class KnockbackStateEnterArgs : StateEnterArgs
-    {
-        public float knockBackTime;
-        public int returnState;
-    }
-
-    public abstract void OnEnter(StateEnterArgs args = null);
+    public abstract void OnEnter();
 
     public abstract void OnExit();
 

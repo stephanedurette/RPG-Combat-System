@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ChaseState : State
 {
-    [SerializeField] private EnemySlime enemySlime;
+    private EnemySlime enemySlime;
 
-    public override void OnEnter(StateEnterArgs args = null)
+    public ChaseState(object owner)
     {
-        enemySlime.SetSpeed(EnemySlime.Speed.Run);
-        enemySlime.KnockedBack = false;
+        enemySlime = owner as EnemySlime;
+    }
+
+    public override void OnEnter()
+    {
+        enemySlime.currentSpeed = enemySlime.runSpeed;
     }
 
     public override void OnExit()
@@ -19,6 +23,9 @@ public class ChaseState : State
 
     public override void OnUpdate()
     {
-        enemySlime.SetMovement(FindObjectOfType<Player>().transform.position);
+        var player = Object.FindObjectOfType<Player>();
+        if (player != null)
+            enemySlime.SetMovement(player.transform.position);
+        
     }
 }

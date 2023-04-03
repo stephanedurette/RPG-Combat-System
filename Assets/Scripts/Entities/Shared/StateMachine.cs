@@ -3,33 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine
 {
-    [SerializeField] private int startingStateIndex;
-    [SerializeField] private List<State> states;
+    State currentState = null;
 
-    int currentStateIndex = -1;
-
-    private void Start()
+    public StateMachine(State startingState)
     {
-        SetState(startingStateIndex);
+        SetState(startingState);
     }
 
-    public void SetState(int newStateIndex, State.StateEnterArgs args = null)
+    public void SetState(State newState)
     {
-        if (currentStateIndex == newStateIndex) return;
+        if (currentState == newState) return;
 
-        if (currentStateIndex != -1)
-            states[currentStateIndex].OnExit();
+        if (currentState != null)
+            currentState.OnExit();
 
-        currentStateIndex = newStateIndex;
+        currentState = newState;
 
-        states[currentStateIndex].OnEnter(args);
+        currentState.OnEnter();
     }
 
-    public void Update()
+    public void OnUpdate()
     {
-        states[currentStateIndex].OnUpdate();
+        currentState.OnUpdate();
     }
 
 

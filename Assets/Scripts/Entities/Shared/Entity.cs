@@ -6,7 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(StateMachine))]
-
 public abstract class Entity : MonoBehaviour
 {
     [SerializeField] internal float walkSpeed = 10f;

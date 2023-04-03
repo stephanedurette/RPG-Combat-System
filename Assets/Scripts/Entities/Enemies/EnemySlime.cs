@@ -3,47 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySlime : Entity
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Health))]
+public class EnemySlime : MonoBehaviour, IDamageTaker
 {
-    [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float playerAggroDistance, playerAttackDistance;
+    [SerializeField] internal float walkSpeed, runSpeed;
 
-    private float currentSpeed;
+    [SerializeField] internal List<Transform> patrolTransforms;
 
-    private bool hasAggro = false;
-    private bool knockedBack = false;
+    private PatrolState patrolState;
+    private ChaseState chaseState;
 
-    public bool KnockedBack { set { knockedBack = value; } }
+    private Rigidbody2D rigidBody;
+    private Animator animator;
+    private Health health;
 
-    public enum Speed
+    private Vector2 lastMoveDirection = Vector2.zero;
+
+    internal float currentSpeed;
+
+    private StateMachine stateMachine;
+
+    private void Start()
     {
-        Walk,
-        Run,
-        Stop
+        patrolState = new PatrolState(this);
+        chaseState = new ChaseState(this);
+
+        stateMachine = new StateMachine(patrolState);
     }
-
-    public float PlayerAttackDistance => playerAttackDistance;
-
 
     // Update is called once per frame
     private void Update()
     {
-        if (knockedBack) return;
-
-        if (FindObjectOfType<Player>() == null)
+        if (IsPlayerInRange(playerAggroDistance))
         {
-            stateMachine.SetState(0);
-        } else if (IsPlayerInRange(playerAttackDistance))
-        {
-            stateMachine.SetState(2);
-        } else if (IsPlayerInRange(playerAggroDistance))
-        {
-            stateMachine.SetState(1);
-            hasAggro = true;
-        } else if (hasAggro)
-        {
-            stateMachine.SetState(1);
+            stateMachine.SetState(chaseState);
         }
+
+        stateMachine.OnUpdate();
     }
 
     private bool IsPlayerInRange(float range)
@@ -70,37 +69,26 @@ public class EnemySlime : Entity
         rigidBody.velocity = normalizedInputVector * currentSpeed;
     }
 
-    public void SetSpeed(Speed speed)
-    {
-        switch (speed)
-        {
-            case (Speed.Stop):
-                currentSpeed = 0f;
-                break;
-            case (Speed.Walk):
-                currentSpeed = walkSpeed;
-                break;
-            case (Speed.Run):
-                currentSpeed = runSpeed;
-                break;
-            default:
-                break;
-        }
-    }
-
-    public override void TakeDamage(Vector3 sourcePosition)
-    {
-        /*
-        health.ChangeHealth(-attackAttributes.damage);
-
-        rigidBody.velocity = (transform.position - sourcePosition).normalized * attackAttributes.knockBackVelocity;
-        knockedBack = true;
-        stateMachine.SetState(3, new State.KnockbackStateEnterArgs() { knockBackTime = attackAttributes.knockBackTime, returnState = 1 });
-        */
-    }
-
-    internal override void OnHealthEmpty(object sender, EventArgs e)
+    private void OnHealthEmpty(object sender, EventArgs e)
     {
         Destroy(this.gameObject);
+    }
+
+    private void OnEnable()
+    {
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        health = GetComponent<Health>();
+
+        health.OnHealthEmpty += OnHealthEmpty;
+    }
+    private void OnDisable()
+    {
+        health.OnHealthEmpty -= OnHealthEmpty;
+    }
+
+    public void TakeDamage(UnityEngine.Object source, HitData hitData)
+    {
+        Debug.Log("taking damage");
     }
 }

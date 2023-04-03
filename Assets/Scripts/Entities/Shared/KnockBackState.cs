@@ -16,12 +16,14 @@ public class KnockBackState : State
         this.stateIndexToExit = stateIndexToExit;
     }
 
-    public override void OnEnter(StateEnterArgs args = null)
+    public override void OnEnter()
     {
+        /*
         currentTimer = 0f;
 
         this.knockBackTime = ((State.KnockbackStateEnterArgs)args).knockBackTime;
-        this.stateIndexToExit = ((State.KnockbackStateEnterArgs)args).returnState;
+        this.stateIndexToExit = ((State.KnockbackStateEnterArgs)args).returnState;]
+        */
     }
 
     public override void OnExit()
@@ -30,12 +32,12 @@ public class KnockBackState : State
 
     public override void OnUpdate()
     {
-        
+        /*
         currentTimer += Time.deltaTime;
         if (currentTimer >= knockBackTime)
         {
             entity.stateMachine.SetState(stateIndexToExit);
         }
-        
+        */
     }
 }

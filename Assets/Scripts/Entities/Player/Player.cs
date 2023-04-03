@@ -8,17 +8,22 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour, IDamageTaker
 {
-    [SerializeField] private float walkSpeed = 10f;
+    [SerializeField] internal float walkSpeed = 10f;
 
-    private Vector2 lastMoveDirection = Vector2.zero;
+    internal Vector2 lastMoveDirection = Vector2.zero;
 
-    private Rigidbody2D rigidBody;
-    private Animator animator;
+    internal Rigidbody2D rigidBody;
+    internal Animator animator;
     private Health health;
 
+    private StateMachine stateMachine;
+
+    private ResponsiveState responsiveState;
     private void Start()
     {
+        responsiveState = new ResponsiveState(this);
 
+        stateMachine = new StateMachine(responsiveState);
     }
 
     private void Attack()
@@ -33,10 +38,9 @@ public class Player : MonoBehaviour, IDamageTaker
         health = GetComponent<Health>();
 
         health.OnHealthEmpty += OnHealthEmpty;
-        InputManager.OnAttackPressed += OnAttackPressed;
     }
 
-    private void OnAttackPressed(object sender, EventArgs e)
+    internal void OnAttackPressed(object sender, EventArgs e)
     {
         Attack();
     }
@@ -44,7 +48,6 @@ public class Player : MonoBehaviour, IDamageTaker
     internal void OnDisable()
     {
         health.OnHealthEmpty -= OnHealthEmpty;
-        InputManager.OnAttackPressed -= OnAttackPressed;
     }
 
 
@@ -56,15 +59,7 @@ public class Player : MonoBehaviour, IDamageTaker
 
     private void Update()
     {
-        var normalizedInputVector = InputManager.MoveVector.normalized;
-
-        lastMoveDirection = normalizedInputVector == Vector2.zero ? lastMoveDirection : normalizedInputVector;
-
-        animator.SetBool("IsMoving", normalizedInputVector != Vector2.zero);
-        animator.SetFloat("X Motion", lastMoveDirection.x);
-        animator.SetFloat("Y Motion", lastMoveDirection.y);
-
-        rigidBody.velocity = normalizedInputVector * walkSpeed;
+        stateMachine.OnUpdate();
     }
 
     public void TakeDamage(UnityEngine.Object source, HitData hitData)

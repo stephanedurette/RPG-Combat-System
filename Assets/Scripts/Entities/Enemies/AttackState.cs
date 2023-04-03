@@ -15,10 +15,12 @@ public class AttackState : State
 
     private float currentAttackTimer;
 
-    public override void OnEnter(StateEnterArgs args = null)
+    public override void OnEnter()
     {
+        /*
         enemySlime.SetSpeed(EnemySlime.Speed.Stop);
         currentAttackTimer = 0f;
+        */
     }
 
     public override void OnExit()
@@ -28,6 +30,7 @@ public class AttackState : State
 
     public override void OnUpdate()
     {
+        /*
         currentAttackTimer += Time.deltaTime;
 
         enemySlime.SetMovement(FindObjectOfType<Player>().transform.position);
@@ -37,11 +40,13 @@ public class AttackState : State
             currentAttackTimer = 0f;
             Attack();
         }
+        */
     }
-
+    /*
     private void Attack()
     {
         float attackRadius = 1f;
         enemySlime.Attack(attackRadius, enemySlime.PlayerAttackDistance);
     }
+    */
 }

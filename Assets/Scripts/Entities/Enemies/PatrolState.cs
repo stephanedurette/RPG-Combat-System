@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PatrolState : State
 {
-    [SerializeField] private List<Transform> patrolTransforms;
-    [SerializeField] private EnemySlime enemySlime;
-
     private List<Vector2> patrolPositions;
-
     private int currentPatrolPositionIndex = -1;
 
-    private void Start()
+    private EnemySlime enemySlime;
+
+    public PatrolState(object owner)
     {
-        InitializePatrolPositions();
+        enemySlime = owner as EnemySlime;
     }
 
-    public override void OnEnter(StateEnterArgs args = null)
+    public override void OnEnter()
     {
-        enemySlime.SetSpeed(EnemySlime.Speed.Walk);
+        InitializePatrolPositions();
+
+        enemySlime.currentSpeed = enemySlime.walkSpeed;
         currentPatrolPositionIndex = -1;
     }
 
@@ -49,7 +49,7 @@ public class PatrolState : State
     {
         patrolPositions = new List<Vector2>();
 
-        foreach (Transform t in patrolTransforms)
+        foreach (Transform t in enemySlime.patrolTransforms)
             patrolPositions.Add(t.position);
     }
 }
