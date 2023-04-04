@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,10 +60,8 @@ public class Player : MonoBehaviour, IDamageTaker
         if (currentWeapon != null)
         {
             Destroy(currentWeapon.gameObject);
-        } else
-        {
-            currentWeapon = Instantiate(weapon, weaponParent.transform.position, Quaternion.identity, weaponParent).GetComponent<Weapon>();
-        }
+        } 
+        currentWeapon = Instantiate(weapon, weaponParent.transform.position, Quaternion.identity, weaponParent).GetComponent<Weapon>();
     }
 
     internal void OnEnable()
