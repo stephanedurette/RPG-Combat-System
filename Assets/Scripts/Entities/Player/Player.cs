@@ -9,7 +9,9 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamageTaker
 {
     [SerializeField] internal float walkSpeed = 10f;
-    [SerializeField] private Weapon currentWeapon;
+    [SerializeField] private Transform weaponParent;
+
+    [SerializeField] private GameObject startingWeaponPrefab;
 
     internal Vector2 lastMoveDirection = Vector2.zero;
 
@@ -21,8 +23,16 @@ public class Player : MonoBehaviour, IDamageTaker
 
     private ResponsiveState responsiveState;
     private PlayerKnockbackState playerKnockbackState;
+
+    private Weapon currentWeapon;
+
     private void Start()
     {
+        if (startingWeaponPrefab != null)
+        {
+            EquipWeapon(startingWeaponPrefab);
+        }
+
         responsiveState = new ResponsiveState(this);
         playerKnockbackState = new PlayerKnockbackState(this);
 
@@ -31,7 +41,19 @@ public class Player : MonoBehaviour, IDamageTaker
 
     private void Attack()
     {
-        currentWeapon.Attack();
+        weaponParent.transform.right = lastMoveDirection;
+        currentWeapon?.Attack();
+    }
+
+    public void EquipWeapon(GameObject weapon)
+    {
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon.gameObject);
+        } else
+        {
+            currentWeapon = Instantiate(weapon, weaponParent.transform.position, Quaternion.identity, weaponParent).GetComponent<Weapon>();
+        }
     }
 
     internal void OnEnable()

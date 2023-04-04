@@ -1,20 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6625841931986025737
+--- !u!1001 &1505595153311444072
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2107383072105018672, guid: 09551beed39225b4981d1192aad5672d, type: 3}
-      propertyPath: targets.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 4901733698374684784, guid: 09551beed39225b4981d1192aad5672d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 6dae123ac7984d546bc0a8a0e71fffc9, type: 2}
+      objectReference: {fileID: 9100000, guid: 1da5c7e773bdb5242974e00d14dbdb94, type: 2}
     - target: {fileID: 4901733698374684786, guid: 09551beed39225b4981d1192aad5672d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,7 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4901733698374684787, guid: 09551beed39225b4981d1192aad5672d, type: 3}
       propertyPath: m_Name
-      value: Sword
+      value: Spear
       objectReference: {fileID: 0}
+    - target: {fileID: 4901733699590256080, guid: 09551beed39225b4981d1192aad5672d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1132891639, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09551beed39225b4981d1192aad5672d, type: 3}
