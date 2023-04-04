@@ -23,12 +23,12 @@ public class PlayerKnockbackState : State
     public override void OnEnter()
     {
         currentTime = 0f;
-        player.col.enabled = false;
+        player.SetInvincibleEffect(true);
     }
 
     public override void OnExit()
     {
-        player.col.enabled = true;
+        player.SetInvincibleEffect(false);
     }
 
     public override void OnUpdate()

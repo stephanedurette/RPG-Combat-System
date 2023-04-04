@@ -22487,7 +22487,10 @@ MonoBehaviour:
   walkSpeed: 10
   weaponParent: {fileID: 374082285}
   invincibleTimeInSeconds: 2
+  normalLayerName: Player
+  invincibleLayerName: Invincible
   startingWeaponPrefab: {fileID: 5828368222252104731, guid: 0446d7fbf1ed0c74b840aeb5aa691faf, type: 3}
+  spriteRenderer: {fileID: 2054348814}
 --- !u!61 &1986421866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22857,7 +22860,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 0b78b62eb5ef1764ba36d005b39ee326, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

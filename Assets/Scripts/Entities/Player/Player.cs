@@ -11,7 +11,7 @@ public class Player : MonoBehaviour, IDamageTaker
     [SerializeField] internal float walkSpeed = 10f;
     [SerializeField] private Transform weaponParent;
     [SerializeField] internal float invincibleTimeInSeconds = 2f;
-
+    [SerializeField] private String normalLayerName, invincibleLayerName;
     [SerializeField] private GameObject startingWeaponPrefab;
 
     internal Vector2 lastMoveDirection = Vector2.zero;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour, IDamageTaker
     internal Rigidbody2D rigidBody;
     internal Animator animator;
     private Health health;
-    internal Collider2D col;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     internal StateMachine stateMachine;
 
@@ -28,6 +28,12 @@ public class Player : MonoBehaviour, IDamageTaker
     internal InvincibleState invincibleState;
 
     private Weapon currentWeapon;
+
+    internal void SetInvincibleEffect(bool on)
+    {
+        this.gameObject.layer = LayerMask.NameToLayer(on ? invincibleLayerName : normalLayerName);
+        spriteRenderer.material.SetInt("_IsInvincible", on ? 1 : 0);
+    }
 
     private void Start()
     {
@@ -65,7 +71,6 @@ public class Player : MonoBehaviour, IDamageTaker
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
-        col = GetComponent<Collider2D>();
 
         health.OnHealthEmpty += OnHealthEmpty;
     }
