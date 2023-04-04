@@ -2,43 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerKnockbackState : State
+public class InvincibleState : ResponsiveState
 {
-    private Player player;
-
-    private float knockBackTime;
+    Player player;
 
     private float currentTime;
 
-    public PlayerKnockbackState(object owner)
+    public InvincibleState(object owner) : base(owner)
     {
         player = owner as Player;
     }
 
-    public void Setup(float knockBackTime)
-    {
-        this.knockBackTime = knockBackTime;
-    }
-
     public override void OnEnter()
     {
+        base.OnEnter();
+
         currentTime = 0f;
         player.col.enabled = false;
     }
 
     public override void OnExit()
     {
+        base.OnExit();
+
         player.col.enabled = true;
     }
 
     public override void OnUpdate()
     {
+        base.OnUpdate();
 
         currentTime += Time.deltaTime;
-        if (currentTime >= knockBackTime)
+
+        if (currentTime >= player.invincibleTimeInSeconds)
         {
-            player.stateMachine.SetState(player.invincibleState);
+            player.stateMachine.SetState(player.responsiveState);
         }
-        
     }
 }

@@ -16,10 +16,9 @@ public class EnemyKnockbackState : State
         enemySlime = owner as EnemySlime;
     }
 
-    public void Setup(float knockBackTime, State stateToReturn)
+    public void Setup(float knockBackTime)
     {
         this.knockBackTime = knockBackTime;
-        this.stateToReturn = stateToReturn;
     }
 
     public override void OnEnter()
@@ -37,7 +36,7 @@ public class EnemyKnockbackState : State
         currentTime += Time.deltaTime;
         if (currentTime >= knockBackTime)
         {
-            enemySlime.stateMachine.SetState(stateToReturn);
+            enemySlime.stateMachine.SetState(enemySlime.chaseState);
         }
         
     }

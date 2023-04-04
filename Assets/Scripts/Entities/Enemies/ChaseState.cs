@@ -13,7 +13,7 @@ public class ChaseState : State
 
     public override void OnEnter()
     {
-        enemySlime.currentSpeed = enemySlime.runSpeed;
+        
     }
 
     public override void OnExit()
@@ -24,8 +24,13 @@ public class ChaseState : State
     public override void OnUpdate()
     {
         var player = Object.FindObjectOfType<Player>();
-        if (player != null)
-            enemySlime.SetMovement(player.transform.position);
-        
+        if (player == null) return;
+
+        float minDistance = 0.5f;
+
+        enemySlime.currentSpeed = enemySlime.IsPlayerInRange(minDistance) ? 0f : enemySlime.runSpeed;
+
+        enemySlime.SetMovement(player.transform.position);
+
     }
 }

@@ -102,7 +102,7 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
         health.ChangeHealth(-hitData.damage);
 
         rigidBody.velocity = (transform.position - source.transform.position).normalized * hitData.knockBackVelocity;
-        enemyKnockbackState.Setup(hitData.knockBackTime, chaseState);
+        enemyKnockbackState.Setup(hitData.knockBackTime);
         stateMachine.SetState(enemyKnockbackState);
     }
 }

@@ -10,6 +10,7 @@ public class Player : MonoBehaviour, IDamageTaker
 {
     [SerializeField] internal float walkSpeed = 10f;
     [SerializeField] private Transform weaponParent;
+    [SerializeField] internal float invincibleTimeInSeconds = 2f;
 
     [SerializeField] private GameObject startingWeaponPrefab;
 
@@ -18,11 +19,13 @@ public class Player : MonoBehaviour, IDamageTaker
     internal Rigidbody2D rigidBody;
     internal Animator animator;
     private Health health;
+    internal Collider2D col;
 
     internal StateMachine stateMachine;
 
-    private ResponsiveState responsiveState;
+    internal ResponsiveState responsiveState;
     private PlayerKnockbackState playerKnockbackState;
+    internal InvincibleState invincibleState;
 
     private Weapon currentWeapon;
 
@@ -35,6 +38,7 @@ public class Player : MonoBehaviour, IDamageTaker
 
         responsiveState = new ResponsiveState(this);
         playerKnockbackState = new PlayerKnockbackState(this);
+        invincibleState = new InvincibleState(this);
 
         stateMachine = new StateMachine(responsiveState);
     }
@@ -61,6 +65,7 @@ public class Player : MonoBehaviour, IDamageTaker
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
+        col = GetComponent<Collider2D>();
 
         health.OnHealthEmpty += OnHealthEmpty;
     }
@@ -92,7 +97,7 @@ public class Player : MonoBehaviour, IDamageTaker
         health.ChangeHealth(-hitData.damage);
 
         rigidBody.velocity = (transform.position - source.transform.position).normalized * hitData.knockBackVelocity;
-        playerKnockbackState.Setup(hitData.knockBackTime, responsiveState);
+        playerKnockbackState.Setup(hitData.knockBackTime);
         stateMachine.SetState(playerKnockbackState);
     }
 }

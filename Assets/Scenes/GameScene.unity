@@ -14242,8 +14242,8 @@ Tilemap:
   - first: {x: 8, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 9
-      m_TileSpriteIndex: 20
+      m_TileIndex: 10
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -21459,9 +21459,9 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 5bf00b2f610681c4086e94ecb3c5db68, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: ce13a50bb92e97d48a18d69ba10e4777, type: 2}
-  - m_RefCount: 1455
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 1456
     m_Data: {fileID: 11400000, guid: 31e68c6f2f400f64c85c406fbb698afb, type: 2}
   - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: f3e2ca3297f75d446b220e670fd4d562, type: 2}
@@ -21504,7 +21504,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1455
+  - m_RefCount: 1456
     m_Data: {fileID: -1566051579, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
   - m_RefCount: 16
     m_Data: {fileID: -306995844, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
@@ -21524,8 +21524,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 230448353, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1584
     m_Data:
@@ -22486,6 +22486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   weaponParent: {fileID: 374082285}
+  invincibleTimeInSeconds: 2
   startingWeaponPrefab: {fileID: 5828368222252104731, guid: 0446d7fbf1ed0c74b840aeb5aa691faf, type: 3}
 --- !u!61 &1986421866
 BoxCollider2D:
