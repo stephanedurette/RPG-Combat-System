@@ -49,6 +49,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: dffc6b274a697cc4e8e29c42acff5087, type: 3}
     - {fileID: 2800000, guid: 90e6ba014f4686443b359779d6453697, type: 3}
     - {fileID: 2800000, guid: 58f7bbad35330da4db3c6ab3161f04a8, type: 3}
+    - {fileID: 2800000, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -138,6 +139,18 @@ SpriteAtlas:
   - {fileID: 521229454, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
   - {fileID: 1187174454, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
   - {fileID: -1237740368, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
+  - {fileID: 81900271, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -295468253, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -1149173058, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 35776708, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 83871908, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -1076426534, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -1132891639, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 2134856443, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 1561469441, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 710056424, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -1628322483, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -440728183, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
   - {fileID: 356163629, guid: 58f7bbad35330da4db3c6ab3161f04a8, type: 3}
   - {fileID: -1960067134, guid: 58f7bbad35330da4db3c6ab3161f04a8, type: 3}
   - {fileID: 1548158949, guid: 58f7bbad35330da4db3c6ab3161f04a8, type: 3}
@@ -239,6 +252,18 @@ SpriteAtlas:
   - Player_11
   - Player_12
   - Player_13
+  - Weapons_10
+  - Weapons_11
+  - Weapons_9
+  - Weapons_8
+  - Weapons_3
+  - Weapons_2
+  - Weapons_1
+  - Weapons_0
+  - Weapons_7
+  - Weapons_6
+  - Weapons_5
+  - Weapons_4
   - move up 2
   - move up 1
   - idle up 1

@@ -9,6 +9,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamageTaker
 {
     [SerializeField] internal float walkSpeed = 10f;
+    [SerializeField] private Weapon currentWeapon;
 
     internal Vector2 lastMoveDirection = Vector2.zero;
 
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour, IDamageTaker
 
     private void Attack()
     {
-        Debug.Log("attacking");
+        currentWeapon.Attack();
     }
 
     internal void OnEnable()
