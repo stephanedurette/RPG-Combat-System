@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemyKnockbackState : State
 {
+    private Timer timer;
+
     private EnemySlime enemySlime;
 
     private float knockBackTime;
-    private State stateToReturn;
-
-    private float currentTime;
 
     public EnemyKnockbackState(object owner)
     {
@@ -23,21 +22,15 @@ public class EnemyKnockbackState : State
 
     public override void OnEnter()
     {
-        currentTime = 0f;   
+        timer = new Timer(knockBackTime, () => enemySlime.stateMachine.SetState(enemySlime.chaseState), enemySlime);
     }
 
     public override void OnExit()
     {
+        timer.Stop();
     }
 
     public override void OnUpdate()
-    {
-
-        currentTime += Time.deltaTime;
-        if (currentTime >= knockBackTime)
-        {
-            enemySlime.stateMachine.SetState(enemySlime.chaseState);
-        }
-        
+    {   
     }
 }

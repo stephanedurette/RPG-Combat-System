@@ -6,11 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Health))]
-public class EnemySlime : MonoBehaviour, IDamageTaker
+public class EnemySlime : MonoBehaviour
 {
     [SerializeField] internal float playerAggroDistance, playerAttackDistance;
     [SerializeField] internal float walkSpeed, runSpeed;
     [SerializeField] private HitData selfKnockback;
+    [SerializeField] private Hurtbox hurtbox;
 
     [SerializeField] internal List<Transform> patrolTransforms;
 
@@ -82,27 +83,33 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
         hitbox = GetComponentInChildren<Hitbox>();
 
         health.OnHealthEmpty += OnHealthEmpty;
-        hitbox.OnCollision += Hitbox_OnCollision;
+        hitbox.OnHitboxHit += Hitbox_OnCollision;
+        hurtbox.OnHurtboxHit += Hurtbox_OnHurtboxHit;
     }
 
-    private void Hitbox_OnCollision(object sender, Hitbox.OnCollisionEventArgs e)
+    private void Hurtbox_OnHurtboxHit(object sender, Hurtbox.OnHurtboxHitEventArgs e)
     {
-        //simulate getting hit but without the damage
-        TakeDamage(e.collision.gameObject, selfKnockback);
+        health.ChangeHealth(-e.hitData.damage);
+
+        rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
+        enemyKnockbackState.Setup(e.hitData.knockBackTime);
+        stateMachine.SetState(enemyKnockbackState);
+    }
+
+    private void Hitbox_OnCollision(object sender, Hitbox.OnHitboxHitEventArgs e)
+    {
+        var knockBackVelocity = 30f;
+        var knockBackTime = .2f;
+
+        rigidBody.velocity = (transform.position - e.collision.transform.position).normalized * knockBackVelocity;
+        enemyKnockbackState.Setup(knockBackTime);
+        stateMachine.SetState(enemyKnockbackState);
     }
 
     private void OnDisable()
     {
         health.OnHealthEmpty -= OnHealthEmpty;
-        hitbox.OnCollision -= Hitbox_OnCollision;
-    }
-
-    public void TakeDamage(GameObject source, HitData hitData)
-    {
-        health.ChangeHealth(-hitData.damage);
-
-        rigidBody.velocity = (transform.position - source.transform.position).normalized * hitData.knockBackVelocity;
-        enemyKnockbackState.Setup(hitData.knockBackTime);
-        stateMachine.SetState(enemyKnockbackState);
+        hitbox.OnHitboxHit -= Hitbox_OnCollision;
+        hurtbox.OnHurtboxHit -= Hurtbox_OnHurtboxHit;
     }
 }

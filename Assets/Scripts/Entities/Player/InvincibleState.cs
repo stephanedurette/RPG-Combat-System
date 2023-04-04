@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class InvincibleState : ResponsiveState
 {
+    Timer timer;
     Player player;
-
-    private float currentTime;
 
     public InvincibleState(object owner) : base(owner)
     {
@@ -17,9 +16,7 @@ public class InvincibleState : ResponsiveState
     {
         base.OnEnter();
 
-        currentTime = 0f;
-
-
+        timer = new Timer(player.invincibleTimeInSeconds, () => player.stateMachine.SetState(player.responsiveState), player);
         player.SetInvincibleEffect(true);
     }
 
@@ -27,18 +24,12 @@ public class InvincibleState : ResponsiveState
     {
         base.OnExit();
 
+        timer.Stop();
         player.SetInvincibleEffect(false);
     }
 
     public override void OnUpdate()
     {
         base.OnUpdate();
-
-        currentTime += Time.deltaTime;
-
-        if (currentTime >= player.invincibleTimeInSeconds)
-        {
-            player.stateMachine.SetState(player.responsiveState);
-        }
     }
 }

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerKnockbackState : State
 {
+    Timer timer;
     private Player player;
 
     private float knockBackTime;
-
-    private float currentTime;
 
     public PlayerKnockbackState(object owner)
     {
@@ -22,23 +21,18 @@ public class PlayerKnockbackState : State
 
     public override void OnEnter()
     {
-        currentTime = 0f;
+        timer = new Timer(knockBackTime, () => player.stateMachine.SetState(player.invincibleState), player);
         player.SetInvincibleEffect(true);
     }
 
     public override void OnExit()
     {
+        timer.Stop();
         player.SetInvincibleEffect(false);
     }
 
     public override void OnUpdate()
     {
 
-        currentTime += Time.deltaTime;
-        if (currentTime >= knockBackTime)
-        {
-            player.stateMachine.SetState(player.invincibleState);
-        }
-        
     }
 }

@@ -10,9 +10,9 @@ public class Hitbox : MonoBehaviour
     [SerializeField] LayerMask targets;
     [SerializeField] HitData hitData;
 
-    public event EventHandler<OnCollisionEventArgs> OnCollision;
+    public event EventHandler<OnHitboxHitEventArgs> OnHitboxHit;
 
-    public class OnCollisionEventArgs : EventArgs
+    public class OnHitboxHitEventArgs : EventArgs
     {
         public Collider2D collision;
     }
@@ -21,10 +21,10 @@ public class Hitbox : MonoBehaviour
     {
         if (!IsInLayerMask(collision.gameObject.layer, targets)) return;
 
-        if (collision.gameObject.TryGetComponent(out IDamageTaker damageTaker))
+        if (collision.gameObject.TryGetComponent(out Hurtbox hurtBox))
         {
-            damageTaker.TakeDamage(this.gameObject, hitData);
-            OnCollision?.Invoke(this, new OnCollisionEventArgs() { collision = collision});
+            hurtBox.OnHit(this.gameObject, hitData);
+            OnHitboxHit?.Invoke(this, new OnHitboxHitEventArgs() { collision = collision});
         }
     }
 

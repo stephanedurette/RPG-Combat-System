@@ -6,13 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Health))]
-public class Player : MonoBehaviour, IDamageTaker
+public class Player : MonoBehaviour
 {
     [SerializeField] internal float walkSpeed = 10f;
     [SerializeField] private Transform weaponParent;
     [SerializeField] internal float invincibleTimeInSeconds = 2f;
-    [SerializeField] private String normalLayerName, invincibleLayerName;
     [SerializeField] private GameObject startingWeaponPrefab;
+    [SerializeField] private Hurtbox hurtbox;
 
     internal Vector2 lastMoveDirection = Vector2.zero;
 
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour, IDamageTaker
 
     internal void SetInvincibleEffect(bool on)
     {
-        this.gameObject.layer = LayerMask.NameToLayer(on ? invincibleLayerName : normalLayerName);
+        hurtbox.gameObject.SetActive(!on);
         spriteRenderer.material.SetInt("_IsInvincible", on ? 1 : 0);
     }
 
@@ -71,6 +71,16 @@ public class Player : MonoBehaviour, IDamageTaker
         health = GetComponent<Health>();
 
         health.OnHealthEmpty += OnHealthEmpty;
+        hurtbox.OnHurtboxHit += Hurtbox_OnHurtboxHit;
+    }
+
+    private void Hurtbox_OnHurtboxHit(object sender, Hurtbox.OnHurtboxHitEventArgs e)
+    {
+        health.ChangeHealth(-e.hitData.damage);
+
+        rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
+        playerKnockbackState.Setup(e.hitData.knockBackTime);
+        stateMachine.SetState(playerKnockbackState);
     }
 
     internal void OnAttackPressed(object sender, EventArgs e)
@@ -81,6 +91,7 @@ public class Player : MonoBehaviour, IDamageTaker
     internal void OnDisable()
     {
         health.OnHealthEmpty -= OnHealthEmpty;
+        hurtbox.OnHurtboxHit -= Hurtbox_OnHurtboxHit;
     }
 
 
@@ -93,14 +104,5 @@ public class Player : MonoBehaviour, IDamageTaker
     private void Update()
     {
         stateMachine.OnUpdate();
-    }
-
-    public void TakeDamage(GameObject source, HitData hitData)
-    {
-        health.ChangeHealth(-hitData.damage);
-
-        rigidBody.velocity = (transform.position - source.transform.position).normalized * hitData.knockBackVelocity;
-        playerKnockbackState.Setup(hitData.knockBackTime);
-        stateMachine.SetState(playerKnockbackState);
     }
 }
