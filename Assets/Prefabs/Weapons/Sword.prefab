@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: targets.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 2107383072105018673, guid: 09551beed39225b4981d1192aad5672d, type: 3}
+      propertyPath: m_Radius
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107383072105018674, guid: 09551beed39225b4981d1192aad5672d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.26
+      objectReference: {fileID: 0}
     - target: {fileID: 4901733698374684784, guid: 09551beed39225b4981d1192aad5672d, type: 3}
       propertyPath: m_Controller
       value: 

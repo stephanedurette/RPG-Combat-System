@@ -22645,7 +22645,7 @@ MonoBehaviour:
   walkSpeed: 10
   weaponParent: {fileID: 374082285}
   invincibleTimeInSeconds: 2
-  startingWeaponPrefab: {fileID: 5828368222252104731, guid: 0446d7fbf1ed0c74b840aeb5aa691faf, type: 3}
+  startingWeaponPrefab: {fileID: 2302972140443757946, guid: 4bb1795e517ee7c47a067afebb12769a, type: 3}
   hurtbox: {fileID: 2039443151}
   spriteRenderer: {fileID: 2054348814}
 --- !u!61 &1986421866
