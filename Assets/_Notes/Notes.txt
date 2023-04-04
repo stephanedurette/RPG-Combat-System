@@ -1,0 +1,28 @@
+Course this is based on: https://www.udemy.com/course/make-games-without-code-unity-visual-scripting/learn/lecture/24212676#overview
+
+----------------------------------- Modular Objects -------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+
+----------------------------------- Interfaces ------------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+
+----------------------------------- Prefab Variants -------------------------------------------
+
+
+
+-----------------------------------------------------------------------------------------------
+
+
+-- TODO ----------------------------------------------------------------------------
+
+Watch video and implement blocking
+watch video and implement coin, health and health max pickups
+
+have spear and sword weapons that implement the modular weapons and hitboxes with pickups
+
