@@ -16,12 +16,14 @@ public class Player : MonoBehaviour, IDamageTaker
     internal Animator animator;
     private Health health;
 
-    private StateMachine stateMachine;
+    internal StateMachine stateMachine;
 
     private ResponsiveState responsiveState;
+    private PlayerKnockbackState playerKnockbackState;
     private void Start()
     {
         responsiveState = new ResponsiveState(this);
+        playerKnockbackState = new PlayerKnockbackState(this);
 
         stateMachine = new StateMachine(responsiveState);
     }
@@ -62,8 +64,12 @@ public class Player : MonoBehaviour, IDamageTaker
         stateMachine.OnUpdate();
     }
 
-    public void TakeDamage(UnityEngine.Object source, HitData hitData)
+    public void TakeDamage(GameObject source, HitData hitData)
     {
-        Debug.Log("taking damage");
+        health.ChangeHealth(-hitData.damage);
+
+        rigidBody.velocity = (transform.position - source.transform.position).normalized * hitData.knockBackVelocity;
+        playerKnockbackState.Setup(hitData.knockBackTime, responsiveState);
+        stateMachine.SetState(playerKnockbackState);
     }
 }

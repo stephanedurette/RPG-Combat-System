@@ -4816,7 +4816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6429057145311798717, guid: ffbb54981eb4897458b93015ffac69e3, type: 3}
       propertyPath: m_Radius
-      value: 0.74
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6429057145311798717, guid: ffbb54981eb4897458b93015ffac69e3, type: 3}
       propertyPath: m_Offset.y
@@ -5018,10 +5018,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019524097, y: 0.31400084}
+  m_Offset: {x: 0.0019524097, y: 0.29466957}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5032,7 +5032,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9997745, y: 1.3727069}
+  m_Size: {x: 1.5938148, y: 1.0054101}
   m_EdgeRadius: 0
 --- !u!50 &1368909666
 Rigidbody2D:
@@ -5089,6 +5089,7 @@ MonoBehaviour:
   playerAttackDistance: 3
   walkSpeed: 5
   runSpeed: 7
+  selfKnockback: {fileID: 11400000, guid: 17c9719b86be57848b99bd663976907d, type: 2}
   patrolTransforms:
   - {fileID: 2136852344}
   - {fileID: 1785046688}

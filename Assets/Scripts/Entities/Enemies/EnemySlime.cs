@@ -8,13 +8,15 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class EnemySlime : MonoBehaviour, IDamageTaker
 {
-    [SerializeField] private float playerAggroDistance, playerAttackDistance;
+    [SerializeField] internal float playerAggroDistance, playerAttackDistance;
     [SerializeField] internal float walkSpeed, runSpeed;
+    [SerializeField] private HitData selfKnockback;
 
     [SerializeField] internal List<Transform> patrolTransforms;
 
     private PatrolState patrolState;
-    private ChaseState chaseState;
+    internal ChaseState chaseState;
+    private EnemyKnockbackState enemyKnockbackState;
 
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -25,12 +27,13 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
 
     internal float currentSpeed;
 
-    private StateMachine stateMachine;
+    internal StateMachine stateMachine;
 
     private void Start()
     {
         patrolState = new PatrolState(this);
         chaseState = new ChaseState(this);
+        enemyKnockbackState = new EnemyKnockbackState(this);
 
         stateMachine = new StateMachine(patrolState);
     }
@@ -38,15 +41,11 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
     // Update is called once per frame
     private void Update()
     {
-        if (IsPlayerInRange(playerAggroDistance))
-        {
-            stateMachine.SetState(chaseState);
-        }
 
         stateMachine.OnUpdate();
     }
 
-    private bool IsPlayerInRange(float range)
+    internal bool IsPlayerInRange(float range)
     {
         var player = FindObjectOfType<Player>();
         if (player == null) return false;
@@ -88,8 +87,8 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
 
     private void Hitbox_OnCollision(object sender, Hitbox.OnCollisionEventArgs e)
     {
-        //set to opposite knockback state
-        Debug.Log("ouch");
+        //simulate getting hit but without the damage
+        TakeDamage(e.collision.gameObject, selfKnockback);
     }
 
     private void OnDisable()
@@ -98,8 +97,12 @@ public class EnemySlime : MonoBehaviour, IDamageTaker
         hitbox.OnCollision -= Hitbox_OnCollision;
     }
 
-    public void TakeDamage(UnityEngine.Object source, HitData hitData)
+    public void TakeDamage(GameObject source, HitData hitData)
     {
-        Debug.Log("taking damage");
+        health.ChangeHealth(-hitData.damage);
+
+        rigidBody.velocity = (transform.position - source.transform.position).normalized * hitData.knockBackVelocity;
+        enemyKnockbackState.Setup(hitData.knockBackTime, chaseState);
+        stateMachine.SetState(enemyKnockbackState);
     }
 }

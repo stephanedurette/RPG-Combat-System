@@ -23,7 +23,7 @@ public class Hitbox : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out IDamageTaker damageTaker))
         {
-            damageTaker.TakeDamage(this, hitData);
+            damageTaker.TakeDamage(this.gameObject, hitData);
             OnCollision?.Invoke(this, new OnCollisionEventArgs() { collision = collision});
         }
     }

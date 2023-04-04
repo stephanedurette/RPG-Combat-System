@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IDamageTaker
 {
-    public void TakeDamage(Object source, HitData hitData);
+    public void TakeDamage(GameObject source, HitData hitData);
 
 }

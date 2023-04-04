@@ -12,11 +12,12 @@ public class PatrolState : State
     public PatrolState(object owner)
     {
         enemySlime = owner as EnemySlime;
+
+        InitializePatrolPositions();
     }
 
     public override void OnEnter()
     {
-        InitializePatrolPositions();
 
         enemySlime.currentSpeed = enemySlime.walkSpeed;
         currentPatrolPositionIndex = -1;
@@ -28,6 +29,17 @@ public class PatrolState : State
     }
 
     public override void OnUpdate()
+    {
+        FollowPatrol();
+
+        if (enemySlime.IsPlayerInRange(enemySlime.playerAggroDistance))
+        {
+            enemySlime.stateMachine.SetState(enemySlime.chaseState);
+        }
+
+    }
+
+    void FollowPatrol()
     {
         if (currentPatrolPositionIndex == -1)
         {
