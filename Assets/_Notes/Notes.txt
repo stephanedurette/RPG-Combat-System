@@ -2,6 +2,7 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 
 ----------------------------------- Modular Objects -------------------------------------------
 
+Collectible object implements a change amount method, change amount delegate, change max amount delegate. Health, Coins, Stars would inherit from this
 
 
 -----------------------------------------------------------------------------------------------
@@ -14,12 +15,21 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 
 ----------------------------------- Prefab Variants -------------------------------------------
 
-
+Pickup prefab variant with a serializable Collectible.cs ie. health, coin, stars that collide with the player
 
 -----------------------------------------------------------------------------------------------
 
 
 -- TODO ----------------------------------------------------------------------------
+
+full pickup system using collectible.cs parent class and prefab variants of collectibles, also modular UI for pickups
+health
+health containers
+coins
+shields
+keys
+weapons (sword, spear) //different from collectibles
+
 
 Watch video and implement blocking
 watch video and implement coin, health and health max pickups
