@@ -3,7 +3,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour
 {
     [SerializeField] internal float walkSpeed = 10f;
@@ -11,13 +10,13 @@ public class Player : MonoBehaviour
     [SerializeField] internal float invincibleTimeInSeconds = 2f;
     [SerializeField] private GameObject startingWeaponPrefab;
     [SerializeField] private Hurtbox hurtbox;
+    [SerializeField] private Health health;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     internal Vector2 lastMoveDirection = Vector2.zero;
 
     internal Rigidbody2D rigidBody;
     internal Animator animator;
-    private Health health;
-    [SerializeField] private SpriteRenderer spriteRenderer;
 
     internal StateMachine stateMachine;
 
@@ -66,7 +65,6 @@ public class Player : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        health = GetComponent<Health>();
 
         health.OnHealthEmpty += OnHealthEmpty;
         hurtbox.OnHurtboxHit += Hurtbox_OnHurtboxHit;
@@ -74,7 +72,7 @@ public class Player : MonoBehaviour
 
     private void Hurtbox_OnHurtboxHit(object sender, Hurtbox.OnHurtboxHitEventArgs e)
     {
-        health.ChangeHealth(-e.hitData.damage);
+        health.ChangeValue(-e.hitData.damage);
 
         rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
         playerKnockbackState.Setup(e.hitData.knockBackTime);

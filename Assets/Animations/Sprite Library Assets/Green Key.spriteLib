@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 36
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 2081823275
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Coin 1
+      m_Hash: -481213498
+      m_Sprite: {fileID: -1526684308, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1886127800, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+    - m_Name: Coin 2
+      m_Hash: 2052592252
+      m_Sprite: {fileID: 1534796573, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1879721065, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+    - m_Name: Coin 1_0
+      m_Hash: 676782203
+      m_Sprite: {fileID: -1526684308, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1903804921, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+    - m_Name: Coin 2_0
+      m_Hash: 705715746
+      m_Sprite: {fileID: 1534796573, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1284390010, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 4
+  m_PrimaryLibraryGUID: d79d3e39bde89e44d9bbac11170f186e

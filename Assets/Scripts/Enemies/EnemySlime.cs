@@ -10,7 +10,6 @@ public class EnemySlime : MonoBehaviour
 {
     [SerializeField] internal float playerAggroDistance, playerAttackDistance;
     [SerializeField] internal float walkSpeed, runSpeed;
-    [SerializeField] private HitData selfKnockback;
     [SerializeField] private Hurtbox hurtbox;
 
     [SerializeField] internal List<Transform> patrolTransforms;
@@ -89,7 +88,7 @@ public class EnemySlime : MonoBehaviour
 
     private void Hurtbox_OnHurtboxHit(object sender, Hurtbox.OnHurtboxHitEventArgs e)
     {
-        health.ChangeHealth(-e.hitData.damage);
+        health.ChangeValue(-e.hitData.damage);
 
         rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
         enemyKnockbackState.Setup(e.hitData.knockBackTime);
