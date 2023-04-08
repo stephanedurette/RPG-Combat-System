@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PickupManager : MonoBehaviour
 {
-    [SerializeField] private Collection playerHealth, playerShields, coins;
+    [SerializeField] private Collection playerHealth, playerShields, coins, blueKeys, greenKeys, redKeys;
 
     private void OnEnable()
     {
@@ -40,6 +40,7 @@ public class PickupManager : MonoBehaviour
                 break;
             case PickupType.HeartContainer:
                 playerHealth.ChangeMaxValue(1);
+                playerHealth.ChangeValue(1);
                 break;
             case PickupType.Coin:
                 coins.ChangeValue(1);
@@ -48,13 +49,13 @@ public class PickupManager : MonoBehaviour
                 playerShields.ChangeValue(1);
                 break;
             case PickupType.Key_Green:
-                Debug.Log("blah");
+                greenKeys.ChangeValue(1);
                 break;
             case PickupType.Key_Red:
-                Debug.Log("blah");
+                redKeys.ChangeValue(1);
                 break;
             case PickupType.Key_Blue:
-                Debug.Log("blah");
+                blueKeys.ChangeValue(1);
                 break;
             case PickupType.Sword:
                 Debug.Log("blah");

@@ -56,6 +56,7 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: -1893012935, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1102979522, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 1386093119, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 2057923773, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1101781396, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1239146953, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -72,6 +73,7 @@ SpriteAtlas:
   - {fileID: 1361195201, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1413007384, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1445815584, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: -415717470, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1709053114, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -970896056, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1401311793, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -88,9 +90,7 @@ SpriteAtlas:
   - {fileID: -504702943, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 2049069793, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1085574742, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: 1386093119, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1965261146, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: -415717470, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1727130929, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1709253358, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1120017321, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -169,6 +169,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Shadow
   - Spikes
+  - Shield Empty
   - Objects_40
   - Objects_41
   - Objects_39
@@ -185,6 +186,7 @@ SpriteAtlas:
   - Objects_25
   - Objects_33
   - Objects_32
+  - Key Empty
   - Red Key 1
   - Red Key 3
   - Red Key 2
@@ -201,9 +203,7 @@ SpriteAtlas:
   - Heart Container 2
   - Objects_13
   - Objects_12
-  - Objects_11
   - Objects_19
-  - Objects_18
   - Blue Key 2
   - Blue Key 3
   - Blue Key 1

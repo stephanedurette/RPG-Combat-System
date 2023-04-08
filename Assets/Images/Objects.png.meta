@@ -347,7 +347,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_11
+      name: Shield Empty
       rect:
         serializedVersion: 2
         x: 64
@@ -494,7 +494,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_18
+      name: Key Empty
       rect:
         serializedVersion: 2
         x: 64
@@ -1012,43 +1012,43 @@ TextureImporter:
       Coin 2: 1534796573
       Shield 2: -2121601502
       Objects_35: 703025068
-      Green Key 3: 1903804921
+      Red Key 4: -926054983
       Objects_13: 2049069793
       Shadow: -1893012935
       Objects_40: 2057923773
-      Red Key 4: -926054983
       Objects_19: -1965261146
       Objects_38: -1416813258
       Objects_12: 1085574742
       Blue Key 2: 1727130929
       Objects_41: 1101781396
       Heart 1: -1211177968
+      Shield Empty: 1386093119
       Red Key 1: 1709053114
       Objects_27: 2141446077
       Shield 1: -1584552230
       Red Key 2: 1401311793
-      Blue Key 4: 1454941632
+      Settings Icon: 1746185605
       Objects_26: -184044997
       Objects_39: 1239146953
       Coin 1: -1526684308
       Green Key 4: -1284390010
-      Objects_18: -415717470
       Objects_36: -270380469
       Blue Key 3: 1709253358
       Objects_33: -1413007384
+      Green Key 3: 1903804921
       Objects_32: 1445815584
+      Key Empty: -415717470
       Heart Container 2: -504702943
       Objects_25: 1361195201
       Objects_20: 1942897083
       Objects_37: 737585757
-      Objects_11: 1386093119
       Green Key 2: 1879721065
       Objects_34: -1302431218
       Heart Container 1: -2055653291
       Blue Key 1: 1120017321
       Heart 2: 1258765636
       Green Key 1: 1886127800
-      Settings Icon: 1746185605
+      Blue Key 4: 1454941632
       Red Key 3: -970896056
   spritePackingTag: 
   pSDRemoveMatte: 0
