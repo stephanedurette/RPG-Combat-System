@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         {
             Destroy(currentWeapon.gameObject);
         } 
-        currentWeapon = Instantiate(weapon, weaponParent.transform.position, Quaternion.identity, weaponParent).GetComponent<Weapon>();
+        currentWeapon = Instantiate(weapon, weaponParent.transform.position, weaponParent.transform.rotation, weaponParent).GetComponent<Weapon>();
     }
 
     internal void OnEnable()
@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
 
         health.OnHealthEmpty += OnHealthEmpty;
         hurtbox.OnHurtboxHit += Hurtbox_OnHurtboxHit;
+        PickupManager.OnWeaponPickup += EquipWeapon;
     }
 
     private void Hurtbox_OnHurtboxHit(object sender, Hurtbox.OnHurtboxHitEventArgs e)
@@ -88,6 +89,7 @@ public class Player : MonoBehaviour
     {
         health.OnHealthEmpty -= OnHealthEmpty;
         hurtbox.OnHurtboxHit -= Hurtbox_OnHurtboxHit;
+        PickupManager.OnWeaponPickup -= EquipWeapon;
     }
 
 

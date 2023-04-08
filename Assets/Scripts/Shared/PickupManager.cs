@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine;
 public class PickupManager : MonoBehaviour
 {
     [SerializeField] private Collection playerHealth, playerShields, coins, blueKeys, greenKeys, redKeys;
+    [SerializeField] private GameObject spearWeaponPrefab, swordWeaponPrefab;
+
+    public static Action<GameObject> OnWeaponPickup;
 
     private void OnEnable()
     {
@@ -58,10 +62,10 @@ public class PickupManager : MonoBehaviour
                 blueKeys.ChangeValue(1);
                 break;
             case PickupType.Sword:
-                Debug.Log("blah");
+                OnWeaponPickup?.Invoke(swordWeaponPrefab);
                 break;
             case PickupType.Spear:
-                Debug.Log("blah");
+                OnWeaponPickup?.Invoke(spearWeaponPrefab);
                 break;
             default:
                 break;
