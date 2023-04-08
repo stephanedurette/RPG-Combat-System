@@ -22,7 +22,11 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 
 -- TODO ----------------------------------------------------------------------------
 
-Watch video and implement blocking and dashing
+Watch video and implement arrow shooting enemy
+implement key doors
+implement star pickup (win condition) from video
+implement retractable spikes that retract and extend periodically for timing puzzles
+implement dungeons and portals 
 
 
 
