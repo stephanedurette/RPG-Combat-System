@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7688425132695720875}
+  - component: {fileID: 7086193032533597454}
   m_Layer: 9
-  m_Name: Hazard
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,6 +34,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7086193032533597454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688425132695720872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218a17ad96be97f4f8d05ee5c382a494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendTime: 1
+  retractTime: 1
+  retractedSprite: {fileID: 43827715, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  canRetract: 1
 --- !u!1 &7688425133031749070
 GameObject:
   m_ObjectHideFlags: 0

@@ -1460,7 +1460,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_29
+      name: Spikes Retracted
       rect:
         serializedVersion: 2
         x: 16
@@ -1599,6 +1599,7 @@ TextureImporter:
       Objects_35: 703025068
       Red Key 4: -926054983
       Objects_23: 1946922961
+      Spikes Retracted: 43827715
       ShieldEffect: -749669661
       Objects_40: 2057923773
       Objects_38: -1416813258
@@ -1611,7 +1612,6 @@ TextureImporter:
       Sword 4: -1718601789
       Objects_26: -184044997
       Objects_39: 1239146953
-      Objects_29: 43827715
       Coin 1: -1526684308
       Green Key 4: -1284390010
       Objects_36: -270380469
