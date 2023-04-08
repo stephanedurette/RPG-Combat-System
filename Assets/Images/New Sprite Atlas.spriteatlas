@@ -56,7 +56,6 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: -1893012935, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1102979522, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: -749669661, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1386093119, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 43827715, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 2057923773, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -92,6 +91,7 @@ SpriteAtlas:
   - {fileID: 2110976774, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -996730905, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1902108735, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: -749669661, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1543032347, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1416753640, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1436903202, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -197,7 +197,6 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Shadow
   - Spikes
-  - Objects_28
   - Shield Empty
   - Objects_29
   - Objects_40
@@ -233,6 +232,7 @@ SpriteAtlas:
   - Objects_4
   - Objects_5
   - Objects_6
+  - ShieldEffect
   - Sword 2
   - Sword 3
   - Spear 2

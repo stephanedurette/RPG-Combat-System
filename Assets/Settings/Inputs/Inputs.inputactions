@@ -24,18 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Shield",
                     "type": "Button",
-                    "id": "1c7ceb11-ab50-4e66-b29b-bdbca5785b69",
+                    "id": "97de6676-fcd6-407d-b267-b4e9297b020a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shield",
+                    "name": "Dash",
                     "type": "Button",
-                    "id": "97de6676-fcd6-407d-b267-b4e9297b020a",
+                    "id": "549ace40-04fd-4601-a9cc-9de2719c45a4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -111,23 +111,23 @@
                 },
                 {
                     "name": "",
-                    "id": "98c15f65-7047-479c-b259-1db06e62791c",
+                    "id": "c25fd9bb-61b1-4307-ba45-1dcf90020527",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Shield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c25fd9bb-61b1-4307-ba45-1dcf90020527",
-                    "path": "<Mouse>/middleButton",
+                    "id": "2ec0d3de-736f-4458-b066-ed4de63583fa",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shield",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

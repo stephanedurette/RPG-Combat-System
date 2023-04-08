@@ -15,12 +15,16 @@ public class ResponsiveState : State
     {
 
         InputManager.OnAttackPressed += player.OnAttackPressed;
+        InputManager.OnDashPressed += player.OnDashPressed;
+        InputManager.OnShieldPressed += player.OnShieldPressed;
     }
 
     public override void OnExit()
     {
 
         InputManager.OnAttackPressed -= player.OnAttackPressed;
+        InputManager.OnDashPressed -= player.OnDashPressed;
+        InputManager.OnShieldPressed -= player.OnShieldPressed;
     }
 
     public override void OnUpdate()

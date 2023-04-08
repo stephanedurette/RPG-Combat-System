@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
     private Inputs inputs;
 
     public static event EventHandler<EventArgs> OnAttackPressed;
-    public static event EventHandler<EventArgs> OnShootPressed;
+    public static event EventHandler<EventArgs> OnDashPressed;
     public static event EventHandler<EventArgs> OnShieldPressed;
 
     private static Vector2 moveVector;
@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
         inputs.Player.Enable();
 
         inputs.Player.Attack.performed += Attack_performed;
-        inputs.Player.Shoot.performed += Shoot_performed;
+        inputs.Player.Dash.performed += Dash_performed;
         inputs.Player.Shield.performed += Shield_performed;
     }
 
@@ -28,9 +28,9 @@ public class InputManager : MonoBehaviour
         OnShieldPressed?.Invoke(this, EventArgs.Empty);
     }
 
-    private void Shoot_performed(InputAction.CallbackContext obj)
+    private void Dash_performed(InputAction.CallbackContext obj)
     {
-        OnShootPressed?.Invoke(this, EventArgs.Empty);
+        OnDashPressed?.Invoke(this, EventArgs.Empty);
     }
 
     private void Attack_performed(InputAction.CallbackContext obj)
@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
     private void OnDisable()
     {
         inputs.Player.Attack.performed -= Attack_performed;
-        inputs.Player.Shoot.performed -= Shoot_performed;
+        inputs.Player.Dash.performed -= Dash_performed;
         inputs.Player.Shield.performed -= Shield_performed;
     }
 
