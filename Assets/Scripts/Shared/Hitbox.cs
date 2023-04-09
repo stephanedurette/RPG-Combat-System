@@ -17,17 +17,12 @@ public class Hitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!IsInLayerMask(collision.gameObject.layer, targets)) return;
+        if (!Helpers.IsInLayerMask(collision.gameObject.layer, targets)) return;
 
         if (collision.gameObject.TryGetComponent(out Hurtbox hurtBox))
         {
             hurtBox.OnHit(this.gameObject, hitData);
             OnHitboxHit?.Invoke(this, new OnHitboxHitEventArgs() { collision = collision});
         }
-    }
-
-    public static bool IsInLayerMask(int layer, LayerMask layerMask)
-    {
-        return layerMask == (layerMask | (1 << layer));
     }
 }

@@ -34,7 +34,7 @@ public class PickupManager : MonoBehaviour
         Sword,
         Spear
     }
-    
+
     void HandlePickUp(PickupType p)
     {
         switch (p)

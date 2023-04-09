@@ -19,7 +19,7 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!Hitbox.IsInLayerMask(collision.gameObject.layer, pickupCollisionLayers)) return;
+        if (!Helpers.IsInLayerMask(collision.gameObject.layer, pickupCollisionLayers)) return;
 
         OnPickupAction?.Invoke(pickUpType);
 

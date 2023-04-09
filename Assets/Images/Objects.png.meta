@@ -641,7 +641,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_25
+      name: Key Block
       rect:
         serializedVersion: 2
         x: 64
@@ -1610,6 +1610,7 @@ TextureImporter:
       Spear 1: -200369057
       Red Key 2: 1401311793
       Sword 4: -1718601789
+      Key Block: 1361195201
       Objects_26: -184044997
       Objects_39: 1239146953
       Coin 1: -1526684308
@@ -1622,7 +1623,6 @@ TextureImporter:
       Green Key 3: 1903804921
       Objects_4: 2110976774
       Key Empty: -415717470
-      Objects_25: 1361195201
       Objects_42: -2057218432
       Objects_11: 129630955
       Green Key 2: 1879721065
