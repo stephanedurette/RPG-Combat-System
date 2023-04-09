@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    [SerializeField] private PickupManager.PickupType pickUpType;
+    [SerializeField] private PickupData pickupData;
     [SerializeField] private LayerMask pickupCollisionLayers;
 
     private Animator animator;
 
-    public static Action<PickupManager.PickupType> OnPickupAction;
+    public static Action<PickupData, Action> OnPickupAction;
 
     private void Start()
     {
@@ -21,12 +21,11 @@ public class Pickup : MonoBehaviour
     {
         if (!Helpers.IsInLayerMask(collision.gameObject.layer, pickupCollisionLayers)) return;
 
-        OnPickupAction?.Invoke(pickUpType);
-
-        animator.SetTrigger("Destroy");
+        
+        OnPickupAction?.Invoke(pickupData, () => this.animator.SetTrigger("Destroy"));
     }
 
-    public void Destroy()
+    public void OnAnimationDestroyEvent()
     {
         Destroy(this.gameObject);
     }

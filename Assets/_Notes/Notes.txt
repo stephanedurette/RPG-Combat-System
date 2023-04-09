@@ -23,8 +23,6 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 -- TODO ----------------------------------------------------------------------------
 
 Watch video and implement arrow shooting enemy
-implement picking up multiple keys
-implement key doors -- current
 implement star pickup (win condition) from video
 implement dungeons and portals 
 

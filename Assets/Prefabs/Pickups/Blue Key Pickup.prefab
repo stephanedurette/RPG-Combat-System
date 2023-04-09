@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: pickUpType
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 14948740321068833, guid: b7cdc3b9afd970c47975842ad5cdb937, type: 3}
+      propertyPath: pickupData
+      value: 
+      objectReference: {fileID: 11400000, guid: b6ebf187f1aed334b8e863456aaf697c, type: 2}
     - target: {fileID: 14948740321068834, guid: b7cdc3b9afd970c47975842ad5cdb937, type: 3}
       propertyPath: m_Name
       value: Blue Key Pickup

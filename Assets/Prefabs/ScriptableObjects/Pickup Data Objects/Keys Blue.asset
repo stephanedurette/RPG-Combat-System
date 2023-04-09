@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5187b7979f505ef4db175df8aa12b47d, type: 3}
   m_Name: Keys Blue
-  m_EditorClassIdentifier: Assembly-CSharp::CollectionPickUpData
+  m_EditorClassIdentifier: 
   pickupType: {fileID: 11400000, guid: 9072c2def34156649b1b5867af4df2ab, type: 2}
+  weaponType: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  heartContainerCollectionType: {fileID: 0}
   collectionType: {fileID: 11400000, guid: 713e28e0071adb34c923c0caab9459cb, type: 2}

@@ -5,12 +5,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(Health))]
 public class EnemySlime : MonoBehaviour
 {
     [SerializeField] internal float playerAggroDistance, playerAttackDistance;
     [SerializeField] internal float walkSpeed, runSpeed;
     [SerializeField] private Hurtbox hurtbox;
+    [SerializeField] private CollectionSO health;
 
     [SerializeField] internal List<Transform> patrolTransforms;
 
@@ -20,7 +20,6 @@ public class EnemySlime : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private Animator animator;
-    private Health health;
     private Hitbox hitbox;
 
     private Vector2 lastMoveDirection = Vector2.zero;
@@ -31,6 +30,9 @@ public class EnemySlime : MonoBehaviour
 
     private void Start()
     {
+        //create an instance of the health SO
+        health = health.Copy();
+
         patrolState = new PatrolState(this);
         chaseState = new ChaseState(this);
         enemyKnockbackState = new EnemyKnockbackState(this);
@@ -78,17 +80,15 @@ public class EnemySlime : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        health = GetComponent<Health>();
         hitbox = GetComponentInChildren<Hitbox>();
 
-        health.OnHealthEmpty += OnHealthEmpty;
         hitbox.OnHitboxHit += Hitbox_OnCollision;
         hurtbox.OnHurtboxHit += Hurtbox_OnHurtboxHit;
     }
 
     private void Hurtbox_OnHurtboxHit(object sender, Hurtbox.OnHurtboxHitEventArgs e)
     {
-        health.ChangeValue(-e.hitData.damage);
+        health.CurrentValue -= e.hitData.damage;
 
         rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
         enemyKnockbackState.Setup(e.hitData.knockBackTime);
@@ -107,7 +107,6 @@ public class EnemySlime : MonoBehaviour
 
     private void OnDisable()
     {
-        health.OnHealthEmpty -= OnHealthEmpty;
         hitbox.OnHitboxHit -= Hitbox_OnCollision;
         hurtbox.OnHurtboxHit -= Hurtbox_OnHurtboxHit;
     }

@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734253d60442ebb4ba2f9f194e6d31f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkCollection: {fileID: 0}
+  checkCollection: {fileID: 11400000, guid: c8b6a32ba27583e49b367a2c712a4794, type: 2}
   requiredAmount: 1
 --- !u!95 &3680058825991041699
 Animator:

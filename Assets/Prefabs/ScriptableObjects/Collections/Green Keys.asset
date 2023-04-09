@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectionType: {fileID: 11400000, guid: 10f4c3ccc7d441246a94823d3e0cd70c, type: 2}
   maxMaxValue: 1
-  maxValue: 1
-  currentValue: 0
+  startingMaxValue: 1
+  startingValue: 0

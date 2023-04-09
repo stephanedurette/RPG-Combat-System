@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22bff964c195bc14a8066a041cc870e4, type: 3}
-  m_Name: PlayerShields
+  m_Name: Player Shields
   m_EditorClassIdentifier: 
   collectionType: {fileID: 11400000, guid: 414730bf563bbb840b4370ac89a95b9b, type: 2}
   maxMaxValue: 10
-  maxValue: 5
-  currentValue: 2
+  startingMaxValue: 5
+  startingValue: 2

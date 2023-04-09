@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] internal float walkSpeed = 10f;
     [SerializeField] internal float invincibleTimeInSeconds = 2f;
     [SerializeField] private List<Hurtbox> hurtboxes;
-    [SerializeField] private Health health;
+    [SerializeField] private CollectionSO health;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [Header("Dashing")]
     [SerializeField] internal float dashSpeed = 10f;
@@ -17,12 +17,12 @@ public class Player : MonoBehaviour
     [SerializeField] internal float dashCooldown = 1f;
     [SerializeField] internal AnimationCurve dashSpeedOverTime;
     [Header("Weapons")]
-    [SerializeField] private GameObject startingWeaponPrefab;
+    [SerializeField] private PickupData startingWeaponPickupData;
     [SerializeField] private Transform weaponParent;
     [Header("Shield")]
     [SerializeField] internal float shieldDuration = 1f;
     [SerializeField] private GameObject shieldObject;
-    [SerializeField] private Collection shieldCollection;
+    [SerializeField] private CollectionSO shieldCollection;
 
 
     internal bool canDash = true;
@@ -52,9 +52,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if (startingWeaponPrefab != null)
+        if (startingWeaponPickupData != null)
         {
-            EquipWeapon(startingWeaponPrefab);
+            EquipWeapon(startingWeaponPickupData);
         }
 
         responsiveState = new ResponsiveState(this);
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     {
         if (isShielded || shieldCollection.CurrentValue <= 0) return;
 
-        shieldCollection.ChangeValue(-1);
+        shieldCollection.CurrentValue -= 1;
         stateMachine.SetState(shieldedState);
     }
 
@@ -92,21 +92,19 @@ public class Player : MonoBehaviour
         currentWeapon?.Attack();
     }
 
-    public void EquipWeapon(GameObject weapon)
+    public void EquipWeapon(PickupData data)
     {
         if (currentWeapon != null)
         {
             Destroy(currentWeapon.gameObject);
         } 
-        currentWeapon = Instantiate(weapon, weaponParent.transform.position, weaponParent.transform.rotation, weaponParent).GetComponent<Weapon>();
+        currentWeapon = Instantiate(data.weaponPrefab, weaponParent.transform.position, weaponParent.transform.rotation, weaponParent).GetComponent<Weapon>();
     }
 
     internal void OnEnable()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        health.OnHealthEmpty += OnHealthEmpty;
 
         foreach (Hurtbox hurtbox in hurtboxes)
             hurtbox.OnHurtboxHit += Hurtbox_OnHurtboxHit;
@@ -118,7 +116,7 @@ public class Player : MonoBehaviour
     {
         if (isShielded) return;
 
-        health.ChangeValue(-e.hitData.damage);
+        health.CurrentValue -= e.hitData.damage;
 
         rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
         playerKnockbackState.Setup(e.hitData.knockBackTime);
@@ -132,7 +130,6 @@ public class Player : MonoBehaviour
 
     internal void OnDisable()
     {
-        health.OnHealthEmpty -= OnHealthEmpty;
         foreach (Hurtbox hurtbox in hurtboxes)
             hurtbox.OnHurtboxHit -= Hurtbox_OnHurtboxHit;
         PickupManager.OnWeaponPickup -= EquipWeapon;

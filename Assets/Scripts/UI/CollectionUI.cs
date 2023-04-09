@@ -4,17 +4,12 @@ using UnityEngine;
 
 public abstract class CollectionUI : MonoBehaviour
 {
-    [SerializeField] internal Collection representedCollection;
+    [SerializeField] internal CollectionSO representedCollection;
     // Start is called before the first frame update
     private void OnEnable()
     {
-        representedCollection.OnValueChanged += RepresentedCollection_OnValueChanged;
-        representedCollection.OnMaxValueChanged += RepresentedCollection_OnValueChanged;
-    }
-
-    private void RepresentedCollection_OnValueChanged(object sender, Collection.OnValueChangedEventArgs e)
-    {
-        UpdateCollectionUI();
+        representedCollection.OnValueChanged += UpdateCollectionUI;
+        representedCollection.OnMaxValueChanged += UpdateCollectionUI;
     }
 
     private void Start()
@@ -27,7 +22,7 @@ public abstract class CollectionUI : MonoBehaviour
 
     private void OnDisable()
     {
-        representedCollection.OnValueChanged -= RepresentedCollection_OnValueChanged;
-        representedCollection.OnMaxValueChanged -= RepresentedCollection_OnValueChanged;
+        representedCollection.OnValueChanged -= UpdateCollectionUI;
+        representedCollection.OnMaxValueChanged -= UpdateCollectionUI;
     }
 }

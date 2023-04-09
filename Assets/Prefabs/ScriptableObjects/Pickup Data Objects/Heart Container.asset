@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: Heart Container
   m_EditorClassIdentifier: 
   pickupType: {fileID: 11400000, guid: 05b509f636d122749bc1561ebb56d777, type: 2}
+  weaponType: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  heartContainerCollectionType: {fileID: 11400000, guid: 71c67d14c62c28444b7f5df6b0b7a9cc, type: 2}
+  collectionType: {fileID: 0}

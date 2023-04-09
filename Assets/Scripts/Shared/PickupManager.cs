@@ -6,10 +6,36 @@ using UnityEngine;
 
 public class PickupManager : MonoBehaviour
 {
-    [SerializeField] private Collection playerHealth, playerShields, coins, blueKeys, greenKeys, redKeys;
-    [SerializeField] private GameObject spearWeaponPrefab, swordWeaponPrefab;
+    [SerializeField] private List<CollectionSO> collections;
+    [SerializeField] private PickupTypeEnumSO pickupTypeEnumSO;
 
-    public static Action<GameObject> OnWeaponPickup;
+    public static Action<PickupData> OnWeaponPickup;
+
+    private Dictionary<CollectionType, CollectionSO> collectionsByType;
+
+    private void Start()
+    {
+        SetupCollectionDict();
+        ResetCollections();
+    }
+
+    void ResetCollections()
+    {
+        foreach(CollectionSO col in collections)
+        {
+            col.Reset();
+        }
+    }
+
+    void SetupCollectionDict()
+    {
+        collectionsByType = new Dictionary<CollectionType, CollectionSO>();
+
+        foreach (CollectionSO c in collections)
+        {
+            collectionsByType[c.collectionType] = c;
+        }
+    }
 
     private void OnEnable()
     {
@@ -21,54 +47,47 @@ public class PickupManager : MonoBehaviour
         Pickup.OnPickupAction -= HandlePickUp;
     }
 
-    public enum PickupType
+    void HandleCollectionPickup(PickupData data, Action onResolve)
     {
-        None,
-        Heart,
-        HeartContainer,
-        Coin,
-        Shield,
-        Key_Green,
-        Key_Red,
-        Key_Blue,
-        Sword,
-        Spear
+        var col = collectionsByType[data.collectionType];
+        if (col.CurrentValue != col.MaxValue)
+        {
+            col.CurrentValue += 1;
+            onResolve?.Invoke();
+        }
     }
 
-    void HandlePickUp(PickupType p)
+    void HandleWeaponPickup(PickupData data, Action onResolve)
     {
-        switch (p)
+        OnWeaponPickup?.Invoke(data);
+        onResolve?.Invoke();
+    }
+
+    void HandleHeartContainerPickup(PickupData data, Action onResolve)
+    {
+        var col = collectionsByType[data.heartContainerCollectionType];
+        if (col.MaxValue != col.MaxMaxValue)
         {
-            case PickupType.Heart:
-                playerHealth.ChangeValue(1);
-                break;
-            case PickupType.HeartContainer:
-                playerHealth.ChangeMaxValue(1);
-                playerHealth.ChangeValue(1);
-                break;
-            case PickupType.Coin:
-                coins.ChangeValue(1);
-                break;
-            case PickupType.Shield:
-                playerShields.ChangeValue(1);
-                break;
-            case PickupType.Key_Green:
-                greenKeys.ChangeValue(1);
-                break;
-            case PickupType.Key_Red:
-                redKeys.ChangeValue(1);
-                break;
-            case PickupType.Key_Blue:
-                blueKeys.ChangeValue(1);
-                break;
-            case PickupType.Sword:
-                OnWeaponPickup?.Invoke(swordWeaponPrefab);
-                break;
-            case PickupType.Spear:
-                OnWeaponPickup?.Invoke(spearWeaponPrefab);
-                break;
-            default:
-                break;
+            collectionsByType[data.heartContainerCollectionType].MaxValue += 1;
+            collectionsByType[data.heartContainerCollectionType].CurrentValue += 1;
+
+            onResolve?.Invoke();
+        }
+    }
+
+    void HandlePickUp(PickupData data, Action onResolve)
+    {
+        if (data.pickupType == pickupTypeEnumSO.Collection)
+        {
+            HandleCollectionPickup(data, onResolve);
+        }
+        else if (data.pickupType == pickupTypeEnumSO.HeartContainer)
+        {
+            HandleHeartContainerPickup(data, onResolve);
+        }
+        else if (data.pickupType == pickupTypeEnumSO.Weapon)
+        {
+            HandleWeaponPickup(data, onResolve);
         }
     }
 }

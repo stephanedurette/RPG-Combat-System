@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyBlock : MonoBehaviour
 {
-    [SerializeField] Collection checkCollection;
+    [SerializeField] CollectionSO checkCollection;
     [SerializeField] private int requiredAmount = 1;
 
     AreaCollider areaCollider;
@@ -32,7 +32,7 @@ public class KeyBlock : MonoBehaviour
     {
         if (checkCollection.CurrentValue >= requiredAmount)
         {
-            checkCollection.ChangeValue(-requiredAmount);
+            checkCollection.CurrentValue -= requiredAmount;
             animator.SetTrigger("Destroy");
         }
     }

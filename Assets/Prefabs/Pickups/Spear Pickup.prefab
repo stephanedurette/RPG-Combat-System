@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: pickUpType
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 14948740321068833, guid: b7cdc3b9afd970c47975842ad5cdb937, type: 3}
+      propertyPath: pickupData
+      value: 
+      objectReference: {fileID: 11400000, guid: 98071cc7ee2b47f4188751bc539b35e9, type: 2}
     - target: {fileID: 14948740321068834, guid: b7cdc3b9afd970c47975842ad5cdb937, type: 3}
       propertyPath: m_Name
       value: Spear Pickup

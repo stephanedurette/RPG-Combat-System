@@ -8,38 +8,54 @@ public class CollectionSO : ScriptableObject
 {
     public CollectionType collectionType;
 
-    public event EventHandler<OnValueChangedEventArgs> OnValueChanged;
-    public event EventHandler<OnValueChangedEventArgs> OnMaxValueChanged;
+    public event Action OnValueChanged;
+    public event Action OnMaxValueChanged;
 
     [SerializeField] private int maxMaxValue = int.MaxValue;
-    [SerializeField] private int maxValue;
-    [SerializeField] private int currentValue;
 
-    public int MaxValue => maxValue;
+    [SerializeField] private int startingMaxValue;
+    [SerializeField] private int startingValue;
 
-    public int CurrentValue => currentValue;
+    private int maxValue;
+    private int currentValue;
 
-    public class OnValueChangedEventArgs : EventArgs
+    public int MaxValue { get { return maxValue; } set { SetMaxValue(value); } }
+
+    public int CurrentValue { get { return currentValue; } set { SetValue(value); } }
+
+    public int MaxMaxValue => maxMaxValue;
+
+    public void Reset()
     {
-        public int oldValue;
-        public int newValue;
+        MaxValue = startingMaxValue;
+        CurrentValue = startingValue;
     }
 
-    public virtual void ChangeMaxValue(int amount)
+    public CollectionSO Copy()
+    {
+        CollectionSO copy = new CollectionSO();
+        copy.maxMaxValue = this.maxMaxValue;
+        copy.maxValue = this.startingMaxValue;
+        copy.currentValue = this.startingValue;
+
+        return copy;
+    }
+
+    public virtual void SetMaxValue(int amount)
     {
         int oldValue = maxValue;
-        maxValue = Math.Clamp(maxValue + amount, 0, maxMaxValue);
+        maxValue = Math.Clamp(amount, 0, maxMaxValue);
 
         if (oldValue != maxValue)
-            OnMaxValueChanged?.Invoke(this, new OnValueChangedEventArgs { newValue = maxValue, oldValue = oldValue });
+            OnMaxValueChanged?.Invoke();
     }
 
-    public virtual void ChangeValue(int amount)
+    public virtual void SetValue(int amount)
     {
         int oldValue = currentValue;
-        currentValue = Math.Clamp(currentValue + amount, 0, maxValue);
+        currentValue = Math.Clamp(amount, 0, maxValue);
 
         if (oldValue != currentValue)
-            OnValueChanged?.Invoke(this, new OnValueChangedEventArgs { newValue = currentValue, oldValue = oldValue });
+            OnValueChanged?.Invoke();
     }
 }

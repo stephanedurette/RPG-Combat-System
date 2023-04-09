@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5187b7979f505ef4db175df8aa12b47d, type: 3}
   m_Name: Sword
-  m_EditorClassIdentifier: Assembly-CSharp::WeaponPickUpData
+  m_EditorClassIdentifier: 
   pickupType: {fileID: 11400000, guid: b1fbf623d53c0024586fbf6d8ea8174e, type: 2}
   weaponType: {fileID: 11400000, guid: 18bf29e110b46994ba9ef405a6304d2b, type: 2}
   weaponPrefab: {fileID: 2302972140443757946, guid: 4bb1795e517ee7c47a067afebb12769a, type: 3}
+  heartContainerCollectionType: {fileID: 0}
+  collectionType: {fileID: 0}
