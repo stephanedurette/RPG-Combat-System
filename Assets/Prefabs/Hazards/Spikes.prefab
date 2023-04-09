@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   extendTime: 1
   retractTime: 1
+  startDelay: 0
   retractedSprite: {fileID: 43827715, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   canRetract: 1
 --- !u!1 &7688425133031749070

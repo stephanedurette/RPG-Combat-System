@@ -10640,7 +10640,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAggroDistance: 7
-  playerAttackDistance: 3
   walkSpeed: 5
   runSpeed: 7
   hurtbox: {fileID: 43426607}
