@@ -23,6 +23,8 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 -- TODO ----------------------------------------------------------------------------
 
 Watch video and implement arrow shooting enemy
+	use sprite resolver and sprite library for enemy and player animations
+
 implement star pickup (win condition) from video
 implement dungeons and portals 
 

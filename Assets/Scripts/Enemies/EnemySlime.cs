@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class EnemySlime : MonoBehaviour
 {
-    [SerializeField] internal float playerAggroDistance, playerAttackDistance;
+    [SerializeField] internal float playerAggroDistance;
     [SerializeField] internal float walkSpeed, runSpeed;
     [SerializeField] private Hurtbox hurtbox;
     [SerializeField] private CollectionSO health;
@@ -43,7 +43,6 @@ public class EnemySlime : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
         stateMachine.OnUpdate();
     }
 
@@ -52,7 +51,7 @@ public class EnemySlime : MonoBehaviour
         var player = FindObjectOfType<Player>();
         if (player == null) return false;
         
-        float distanceFromPlayer = (FindObjectOfType<Player>().transform.position - transform.position).magnitude;
+        float distanceFromPlayer = (player.transform.position - transform.position).magnitude;
 
         return distanceFromPlayer <= range;
 
