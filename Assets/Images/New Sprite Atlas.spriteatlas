@@ -296,6 +296,10 @@ SpriteAtlas:
   - {fileID: 521229454, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
   - {fileID: 1187174454, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
   - {fileID: -1237740368, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
+  - {fileID: -1444256588, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: -454763492, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 542802395, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+  - {fileID: 1158142045, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
   - {fileID: 81900271, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
   - {fileID: -295468253, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
   - {fileID: -1149173058, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
@@ -567,6 +571,10 @@ SpriteAtlas:
   - Player_11
   - Player_12
   - Player_13
+  - Weapons_14
+  - Weapons_15
+  - Weapons_12
+  - Weapons_13
   - Weapons_10
   - Weapons_11
   - Weapons_9
