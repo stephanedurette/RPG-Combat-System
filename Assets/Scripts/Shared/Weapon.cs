@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Weapon : MonoBehaviour
 {
-    private Animator animator;
-    private static int AttackAnimHash = Animator.StringToHash("Attack");
+    internal Animator animator;
+    internal static int AttackAnimHash = Animator.StringToHash("Attack");
 
     // Start is called before the first frame update
     void Start()

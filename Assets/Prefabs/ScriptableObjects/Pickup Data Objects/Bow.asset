@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5187b7979f505ef4db175df8aa12b47d, type: 3}
+  m_Name: Bow
+  m_EditorClassIdentifier: 
+  pickupType: {fileID: 11400000, guid: b1fbf623d53c0024586fbf6d8ea8174e, type: 2}
+  weaponType: {fileID: 11400000, guid: 14a0dabe994f72c4bb0de62a04755a69, type: 2}
+  weaponPrefab: {fileID: 3778221423767141478, guid: 76656904880f2984a98b85d8892af707, type: 3}
+  heartContainerCollectionType: {fileID: 0}
+  collectionType: {fileID: 0}
+  amount: 0
