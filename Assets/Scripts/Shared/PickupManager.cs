@@ -52,7 +52,7 @@ public class PickupManager : MonoBehaviour
         var col = collectionsByType[data.collectionType];
         if (col.CurrentValue != col.MaxValue)
         {
-            col.CurrentValue += 1;
+            col.CurrentValue += data.amount;
             onResolve?.Invoke();
         }
     }

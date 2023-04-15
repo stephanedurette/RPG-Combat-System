@@ -1397,7 +1397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_23
+      name: Diamond 1
       rect:
         serializedVersion: 2
         x: 80
@@ -1418,7 +1418,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_24
+      name: Diamond 2
       rect:
         serializedVersion: 2
         x: 96
@@ -1481,7 +1481,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_30
+      name: TripleHeart 1
       rect:
         serializedVersion: 2
         x: 32
@@ -1502,7 +1502,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_31
+      name: TripleHeart 2
       rect:
         serializedVersion: 2
         x: 48
@@ -1544,7 +1544,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_43
+      name: TripleCoin 1
       rect:
         serializedVersion: 2
         x: 80
@@ -1565,7 +1565,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_44
+      name: TripleCoin 2
       rect:
         serializedVersion: 2
         x: 96
@@ -1598,16 +1598,17 @@ TextureImporter:
     nameFileIdTable:
       Objects_35: 703025068
       Red Key 4: -926054983
-      Objects_23: 1946922961
       Spikes Retracted: 43827715
       ShieldEffect: -749669661
       Objects_40: 2057923773
       Objects_38: -1416813258
       Objects_12: 1085574742
       Blue Key 2: 1727130929
+      TripleHeart 2: -59960149
       Heart 1: -1211177968
       Shield Empty: 1386093119
       Spear 1: -200369057
+      TripleCoin 1: -1026593395
       Red Key 2: 1401311793
       Sword 4: -1718601789
       Key Block: 1361195201
@@ -1618,7 +1619,6 @@ TextureImporter:
       Objects_36: -270380469
       Spear 4: -126518935
       Blue Key 3: 1709253358
-      Objects_31: -59960149
       Objects_33: -1413007384
       Green Key 3: 1903804921
       Objects_4: 2110976774
@@ -1630,14 +1630,12 @@ TextureImporter:
       Blue Key 1: 1120017321
       Heart 2: 1258765636
       Objects_22: -229723221
-      Objects_43: -1026593395
       Red Key 3: -970896056
       Spikes: 1102979522
       Coin 2: 1534796573
       Shield 2: -2121601502
-      Objects_30: -2064582537
-      Spear 3: 1075341184
       Sword 2: 1543032347
+      Spear 3: 1075341184
       Objects_13: 2049069793
       Shadow: -1893012935
       Objects_16: -341485563
@@ -1645,9 +1643,10 @@ TextureImporter:
       Objects_19: -1965261146
       Objects_41: 1101781396
       Red Key 1: 1709053114
+      TripleCoin 2: 523639486
       Sword 1: 939131713
       Objects_27: 2141446077
-      Objects_24: 2057716771
+      TripleHeart 1: -2064582537
       Shield 1: -1584552230
       Objects_5: -996730905
       Objects_6: -1902108735
@@ -1655,9 +1654,10 @@ TextureImporter:
       Objects_15: -1992584141
       Spear 2: 1436903202
       Objects_18: 950559445
-      Objects_44: 523639486
+      Diamond 1: 1946922961
       Objects_32: 1445815584
       Heart Container 2: -504702943
+      Diamond 2: 2057716771
       Objects_21: -1915753762
       Objects_20: 1942897083
       Objects_37: 737585757

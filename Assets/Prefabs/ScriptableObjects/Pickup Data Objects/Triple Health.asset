@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5187b7979f505ef4db175df8aa12b47d, type: 3}
-  m_Name: Keys Green
+  m_Name: Triple Health
   m_EditorClassIdentifier: 
   pickupType: {fileID: 11400000, guid: 9072c2def34156649b1b5867af4df2ab, type: 2}
   weaponType: {fileID: 0}
   weaponPrefab: {fileID: 0}
   heartContainerCollectionType: {fileID: 0}
-  collectionType: {fileID: 11400000, guid: 10f4c3ccc7d441246a94823d3e0cd70c, type: 2}
-  amount: 1
+  collectionType: {fileID: 11400000, guid: 71c67d14c62c28444b7f5df6b0b7a9cc, type: 2}
+  amount: 3

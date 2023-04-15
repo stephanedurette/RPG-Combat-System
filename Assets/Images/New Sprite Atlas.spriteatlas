@@ -65,9 +65,6 @@ SpriteAtlas:
   - {fileID: -229723221, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1416813258, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -2121601502, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: -1026593395, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: 1946922961, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: 523639486, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1942897083, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1915753762, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 703025068, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -75,10 +72,7 @@ SpriteAtlas:
   - {fileID: -1302431218, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 2141446077, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 737585757, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: 2057716771, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -270380469, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: -59960149, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: -2064582537, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1413007384, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1445815584, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -415717470, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -87,8 +81,10 @@ SpriteAtlas:
   - {fileID: 1401311793, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -926054983, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 2110976774, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 1946922961, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -996730905, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1902108735, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 2057716771, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 43827715, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -749669661, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1543032347, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -107,6 +103,10 @@ SpriteAtlas:
   - {fileID: 1879721065, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1258765636, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1284390010, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: -2064582537, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: -1026593395, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 523639486, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: -59960149, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -2055653291, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -504702943, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1587554037, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -336,9 +336,6 @@ SpriteAtlas:
   - Objects_22
   - Objects_38
   - Shield 2
-  - Objects_43
-  - Objects_23
-  - Objects_44
   - Objects_20
   - Objects_21
   - Objects_35
@@ -346,10 +343,7 @@ SpriteAtlas:
   - Objects_34
   - Objects_27
   - Objects_37
-  - Objects_24
   - Objects_36
-  - Objects_31
-  - Objects_30
   - Objects_33
   - Objects_32
   - Key Empty
@@ -358,8 +352,10 @@ SpriteAtlas:
   - Red Key 2
   - Red Key 4
   - Objects_4
+  - Diamond 1
   - Objects_5
   - Objects_6
+  - Diamond 2
   - Spikes Retracted
   - ShieldEffect
   - Sword 2
@@ -378,6 +374,10 @@ SpriteAtlas:
   - Green Key 2
   - Heart 2
   - Green Key 4
+  - TripleHeart 1
+  - TripleCoin 1
+  - TripleCoin 2
+  - TripleHeart 2
   - Heart Container 1
   - Heart Container 2
   - Objects_17

@@ -17,3 +17,4 @@ MonoBehaviour:
   weaponPrefab: {fileID: 0}
   heartContainerCollectionType: {fileID: 0}
   collectionType: {fileID: 11400000, guid: 1885a0279d670b94491cbdeb27b9ab5c, type: 2}
+  amount: 1

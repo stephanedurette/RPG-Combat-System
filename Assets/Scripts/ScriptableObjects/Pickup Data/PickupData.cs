@@ -18,4 +18,5 @@ public class PickupData : ScriptableObject
     [Header("For Collections")]
     //pickup type = collection
     public CollectionType collectionType;
+    public int amount;
 }
