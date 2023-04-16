@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CollectionType", menuName = "ScriptableObjects/CollectionType")]
 public class CollectionType : ScriptableObject
 {
-    
+    public Sprite Image;
 }

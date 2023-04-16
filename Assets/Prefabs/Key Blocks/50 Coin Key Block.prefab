@@ -1,51 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6458975642264783461
+--- !u!1001 &1167488457694735047
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 781994178895350743, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 781994178895350743, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 781994178895350743, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 781994178895350743, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094183200214178388, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094183200214178388, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094183200214178388, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2094183200214178388, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+    - target: {fileID: 3680058825991041696, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
+      propertyPath: requiredAmount
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3680058825991041696, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
       propertyPath: checkCollection
       value: 
-      objectReference: {fileID: 11400000, guid: 370941ae5a3b84c44a1d78913f010d92, type: 2}
+      objectReference: {fileID: 11400000, guid: e20076f9659b3e346ba0016497546af0, type: 2}
     - target: {fileID: 3680058825991041700, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
       propertyPath: m_Name
-      value: Blue Key Block
+      value: 50 Coin Key Block
       objectReference: {fileID: 0}
     - target: {fileID: 3680058825991041701, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
       propertyPath: m_RootOrder
@@ -89,26 +61,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3680058825991041701, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3680058826724235889, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1120017321, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-    - target: {fileID: 6435577240886243692, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435577240886243692, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435577240886243692, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6435577240886243692, guid: d3cbd117da78d7843aaa1a634ee3d1d6, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

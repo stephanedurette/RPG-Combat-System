@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d31ef65868dc3644091478c6ec4a3f52, type: 3}
   m_Name: Shields
   m_EditorClassIdentifier: 
+  Image: {fileID: -1584552230, guid: 90e6ba014f4686443b359779d6453697, type: 3}

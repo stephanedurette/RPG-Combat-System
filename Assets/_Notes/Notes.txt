@@ -22,17 +22,19 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 
 -- TODO ----------------------------------------------------------------------------
 
-implement bow weapons
+implement bow weapon pickups
 implement keyboard weapon switching (1,2,3 = spear, sword, bow) with UI similar to keys with pickups
 implement stronger weapons (spear, sword and bow, have wooden, silver and gold pickups)
 
-
+dissolve shader for bad guy spawn / destroy
 
 Watch video and implement arrow shooting enemy
 	use sprite resolver and sprite library for enemy and player animations
 
 implement star pickup (win condition) from video
 implement dungeons and portals 
+
+
 
 
 

@@ -16,3 +16,4 @@ MonoBehaviour:
   maxMaxValue: 1
   startingMaxValue: 1
   startingValue: 0
+  Image: {fileID: 1120017321, guid: 90e6ba014f4686443b359779d6453697, type: 3}
