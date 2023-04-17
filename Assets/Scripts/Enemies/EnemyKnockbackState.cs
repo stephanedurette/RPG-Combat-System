@@ -6,13 +6,13 @@ public class EnemyKnockbackState : State
 {
     private Timer timer;
 
-    private EnemySlime enemySlime;
+    private Enemy enemy;
 
     private float knockBackTime;
 
     public EnemyKnockbackState(object owner)
     {
-        enemySlime = owner as EnemySlime;
+        enemy = owner as Enemy;
     }
 
     public void Setup(float knockBackTime)
@@ -22,7 +22,7 @@ public class EnemyKnockbackState : State
 
     public override void OnEnter()
     {
-        timer = new Timer(knockBackTime, () => enemySlime.stateMachine.SetState(enemySlime.chaseState), enemySlime);
+        timer = new Timer(knockBackTime, enemy.OnDetectPlayer, enemy);
     }
 
     public override void OnExit()

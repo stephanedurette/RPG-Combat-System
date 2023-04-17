@@ -22,6 +22,19 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 
 -- TODO ----------------------------------------------------------------------------
 
+---ENEMIES---
+
+implement arrow shooting enemy (keeps distance from player, moves slowly, launches projectile at player with varying accuracy)
+	enemy projectiles can be blocked by attacking them
+	use sprite resolver and sprite library for enemy and player animations
+
+Implement Enemy System
+3 types of slime enemies, varying in size, health and strength
+3 types of ranged projectile enemies, varying in fire rate, health, strength, size
+3 types of AOE damage area enemies, varying in size, health, AOE size, AOE damage
+
+---ENEMIES---
+
 implement bow weapon pickups
 implement keyboard weapon switching (1,2,3 = spear, sword, bow) with UI similar to keys with pickups
 implement stronger weapons (spear, sword and bow, have wooden, silver and gold pickups)
@@ -30,12 +43,7 @@ Enemy Spawning Areas with rewards at the end
 
 dissolve shader for bad guy spawn / destroy
 
-Watch video and implement arrow shooting enemy
-	use sprite resolver and sprite library for enemy and player animations
-
 implement star pickup (win condition) from video
-
-
 
 
 
