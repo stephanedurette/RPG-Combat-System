@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 4096
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
       m_TextureCompression: 0
@@ -35,20 +35,16 @@ SpriteAtlas:
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
-      enableTightPacking: 1
+      enableTightPacking: 0
       enableAlphaDilation: 0
     secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
-    - {fileID: 2800000, guid: f98cc9cc490984249a962ddfdb31e046, type: 3}
-    - {fileID: 2800000, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-    - {fileID: 2800000, guid: 58f7bbad35330da4db3c6ab3161f04a8, type: 3}
-    - {fileID: 2800000, guid: 394903fc01bd0b048b8c7f45d499f075, type: 3}
+    - {fileID: 102900000, guid: 51764309257cfdc41abad07beaf23a53, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -95,6 +91,8 @@ SpriteAtlas:
   - {fileID: -200369057, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1718601789, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -126518935, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 1085574742, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 2049069793, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1526684308, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1534796573, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1886127800, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -113,8 +111,6 @@ SpriteAtlas:
   - {fileID: -341485563, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1992584141, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -356872935, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: 2049069793, guid: 90e6ba014f4686443b359779d6453697, type: 3}
-  - {fileID: 1085574742, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 129630955, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: -1965261146, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 950559445, guid: 90e6ba014f4686443b359779d6453697, type: 3}
@@ -370,6 +366,8 @@ SpriteAtlas:
   - Spear 1
   - Sword 4
   - Spear 4
+  - Portal 1
+  - Portal 2
   - Coin 1
   - Coin 2
   - Green Key 1
@@ -388,8 +386,6 @@ SpriteAtlas:
   - Objects_16
   - Objects_15
   - Objects_14
-  - Objects_13
-  - Objects_12
   - Objects_11
   - Objects_19
   - Objects_18

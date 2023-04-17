@@ -24,6 +24,8 @@ public class EnemySlime : MonoBehaviour
 
     private Vector2 lastMoveDirection = Vector2.zero;
 
+    private bool canDetectPlayer = true;
+
     internal float currentSpeed;
 
     internal StateMachine stateMachine;
@@ -40,6 +42,19 @@ public class EnemySlime : MonoBehaviour
         stateMachine = new StateMachine(patrolState);
     }
 
+    public void ReturnToPatrolState()
+    {
+        stateMachine.SetState(patrolState);
+        float playerDetectTimeoutLength = 2f;
+        TurnOffDetectionForSeconds(playerDetectTimeoutLength);
+    }
+
+    public void TurnOffDetectionForSeconds(float seconds)
+    {
+        canDetectPlayer = false;
+        Timer t = new Timer(seconds, () => canDetectPlayer = true, this);
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -49,7 +64,7 @@ public class EnemySlime : MonoBehaviour
     internal bool IsPlayerInRange(float range)
     {
         var player = FindObjectOfType<Player>();
-        if (player == null) return false;
+        if (player == null || !canDetectPlayer) return false;
         
         float distanceFromPlayer = (player.transform.position - transform.position).magnitude;
 

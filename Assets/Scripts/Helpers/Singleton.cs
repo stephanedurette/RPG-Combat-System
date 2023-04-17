@@ -21,4 +21,6 @@ public class Singleton : MonoBehaviour
     public MusicManager MusicManager;
     public SoundManager SoundManager;
     public LevelManager LevelManager;
+    public ScreenFadeManager ScreenFadeManager;
+    public CinemachineManager CinemachineManager;
 }

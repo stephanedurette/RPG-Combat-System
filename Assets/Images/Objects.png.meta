@@ -368,7 +368,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_12
+      name: Portal 1
       rect:
         serializedVersion: 2
         x: 80
@@ -389,7 +389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_13
+      name: Portal 2
       rect:
         serializedVersion: 2
         x: 96
@@ -1598,17 +1598,16 @@ TextureImporter:
     nameFileIdTable:
       Objects_35: 703025068
       Red Key 4: -926054983
+      Portal 2: 2049069793
       Spikes Retracted: 43827715
       ShieldEffect: -749669661
       Objects_40: 2057923773
       Objects_38: -1416813258
-      Objects_12: 1085574742
       Blue Key 2: 1727130929
       TripleHeart 2: -59960149
       Heart 1: -1211177968
       Shield Empty: 1386093119
       Spear 1: -200369057
-      TripleCoin 1: -1026593395
       Red Key 2: 1401311793
       Sword 4: -1718601789
       Key Block: 1361195201
@@ -1636,7 +1635,6 @@ TextureImporter:
       Shield 2: -2121601502
       Sword 2: 1543032347
       Spear 3: 1075341184
-      Objects_13: 2049069793
       Shadow: -1893012935
       Objects_16: -341485563
       Objects_17: 1587554037
@@ -1650,6 +1648,7 @@ TextureImporter:
       Shield 1: -1584552230
       Objects_5: -996730905
       Objects_6: -1902108735
+      Portal 1: 1085574742
       Objects_14: -356872935
       Objects_15: -1992584141
       Spear 2: 1436903202
@@ -1661,6 +1660,7 @@ TextureImporter:
       Objects_21: -1915753762
       Objects_20: 1942897083
       Objects_37: 737585757
+      TripleCoin 1: -1026593395
       Objects_34: -1302431218
       Heart Container 1: -2055653291
       Green Key 1: 1886127800

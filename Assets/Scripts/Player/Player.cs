@@ -8,9 +8,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] internal float walkSpeed = 10f;
     [SerializeField] internal float invincibleTimeInSeconds = 2f;
-    [SerializeField] private List<Hurtbox> hurtboxes;
+    [SerializeField] internal List<Hurtbox> hurtboxes;
     [SerializeField] private CollectionSO health;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] internal SpriteRenderer spriteRenderer;
     [Header("Dashing")]
     [SerializeField] internal float dashSpeed = 10f;
     [SerializeField] internal float dashTime = 1f;
@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
     internal InvincibleState invincibleState;
     private DashState dashState;
     private ShieldedState shieldedState;
+    private UnresponsiveState unresponsiveState;
+    private PlayerTeleportState playerTeleportState;
 
     private Weapon currentWeapon;
 
@@ -62,8 +64,21 @@ public class Player : MonoBehaviour
         invincibleState = new InvincibleState(this);
         dashState = new DashState(this);
         shieldedState = new ShieldedState(this);
+        unresponsiveState = new UnresponsiveState(this);
+        playerTeleportState = new PlayerTeleportState(this);
 
         stateMachine = new StateMachine(responsiveState);
+    }
+
+    public void Teleport(float velocity, Vector2 endPosition)
+    {
+        playerTeleportState.Setup(velocity, endPosition);
+        stateMachine.SetState(playerTeleportState);
+    }
+
+    public void SetResponsive(bool responsive)
+    {
+        stateMachine.SetState(responsive ? (State)responsiveState : unresponsiveState);
     }
 
     internal void OnDashPressed(object sender, System.EventArgs e)

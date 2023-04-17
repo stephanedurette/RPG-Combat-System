@@ -39,7 +39,7 @@ public class KeyBlock : MonoBehaviour
         areaCollider.OnAreaColliderHit -= HandlePlayerCollision;
     }
 
-    void HandlePlayerCollision()
+    void HandlePlayerCollision(GameObject other)
     {
         if (checkCollection.CurrentValue >= requiredAmount)
         {

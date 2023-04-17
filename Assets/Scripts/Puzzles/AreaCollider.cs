@@ -8,12 +8,12 @@ public class AreaCollider : MonoBehaviour
 {
     [SerializeField] LayerMask targets;
 
-    public Action OnAreaColliderHit;
+    public Action<GameObject> OnAreaColliderHit;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!Helpers.IsInLayerMask(collision.gameObject.layer, targets)) return;
 
-        OnAreaColliderHit?.Invoke();
+        OnAreaColliderHit?.Invoke(collision.gameObject);
     }
 }
