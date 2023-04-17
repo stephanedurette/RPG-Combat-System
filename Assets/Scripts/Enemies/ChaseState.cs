@@ -26,7 +26,7 @@ public class ChaseState : State
 
         float minDistance = 0.5f;
 
-        enemySlime.currentSpeed = enemySlime.IsPlayerInRange(minDistance) ? 0f : enemySlime.runSpeed;
+        enemySlime.currentSpeed = Enemy.IsPlayerInRange(minDistance, enemySlime.transform.position) ? 0f : enemySlime.runSpeed;
 
         enemySlime.SetMovement(player.transform.position);
 

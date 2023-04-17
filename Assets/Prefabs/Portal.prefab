@@ -186,6 +186,7 @@ MonoBehaviour:
   areaCollider: {fileID: 8134898127889503000}
   exitPosition: {fileID: 1857460561148888295}
   portalMode: 0
+  shortRangePlayerMoveSpeed: 20
 --- !u!1001 &1857460562185846734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 7576163110432173264, guid: aa394cd8e6ef58f41be518bd64375e7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576163110432173265, guid: aa394cd8e6ef58f41be518bd64375e7c, type: 3}
+      propertyPath: m_Radius
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 7576163110432173270, guid: aa394cd8e6ef58f41be518bd64375e7c, type: 3}
       propertyPath: targets.m_Bits
