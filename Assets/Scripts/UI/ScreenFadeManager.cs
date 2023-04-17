@@ -34,7 +34,8 @@ public class ScreenFadeManager : MonoBehaviour
                 fadePanelImage.color.r, 
                 fadePanelImage.color.g, 
                 fadePanelImage.color.b, 
-                Mathf.Lerp(0, 1, fadingToBlack ? elapsedTime / fadeTime : 1 - elapsedTime / fadeTime));
+                Mathf.Lerp(0, 1, fadingToBlack ? elapsedTime / fadeTime : 1 - elapsedTime / fadeTime)
+            );
             yield return null;
         };
 
