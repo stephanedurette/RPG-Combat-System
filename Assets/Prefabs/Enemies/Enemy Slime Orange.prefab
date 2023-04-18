@@ -8,12 +8,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2268510847485730975, guid: faa4b0d007939cd4a97fc94ccb55f783, type: 3}
+      propertyPath: runSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268510847485730975, guid: faa4b0d007939cd4a97fc94ccb55f783, type: 3}
       propertyPath: reColor.g
       value: 0.60058725
       objectReference: {fileID: 0}
     - target: {fileID: 2268510847485730975, guid: faa4b0d007939cd4a97fc94ccb55f783, type: 3}
       propertyPath: reColor.r
       value: 0.9254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268510847485730975, guid: faa4b0d007939cd4a97fc94ccb55f783, type: 3}
+      propertyPath: walkSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3426749349524332759, guid: faa4b0d007939cd4a97fc94ccb55f783, type: 3}
       propertyPath: m_LocalScale.x
