@@ -47,7 +47,7 @@ public class PatrolState : State
             enemy.SetMovement(patrolPositions[currentPatrolPositionIndex]);
         }
 
-        var maxDistanceFromPatrolPosition = 1f;
+        var maxDistanceFromPatrolPosition = 2f;
         var distanceToPatrolPosition = ((Vector2)enemy.transform.position - patrolPositions[currentPatrolPositionIndex]).magnitude;
 
         if (distanceToPatrolPosition <= maxDistanceFromPatrolPosition)

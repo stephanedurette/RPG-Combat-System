@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] internal float walkSpeed, runSpeed;
     [SerializeField] internal Hurtbox hurtbox;
     [SerializeField] internal CollectionSO health;
-
+    [SerializeField] internal SpriteRenderer spriteRenderer;
+    [SerializeField] internal Color reColor;
     [SerializeField] internal List<Transform> patrolTransforms;
 
     internal PatrolState patrolState;
@@ -31,6 +32,9 @@ public class Enemy : MonoBehaviour
     {
         //create an instance of the health SO
         health = health.Copy();
+
+        spriteRenderer.material = new Material(spriteRenderer.material);
+        spriteRenderer.material.SetColor("_ReferenceColor", reColor);
 
         patrolState = new PatrolState(this);
         enemyKnockbackState = new EnemyKnockbackState(this);
