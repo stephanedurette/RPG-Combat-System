@@ -33,6 +33,8 @@ Implement Enemy System
 3 types of ranged projectile enemies, varying in fire rate, health, strength, size
 3 types of AOE damage area enemies, varying in size, health, AOE size, AOE damage
 
+enemies drop loot, ie: coins shields hearts
+
 ---ENEMIES---
 
 implement bow weapon pickups
