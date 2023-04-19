@@ -32,6 +32,7 @@ public class EnemyKnockbackState : State
     public override void OnExit()
     {
         timer.Stop();
+        enemy.spriteRenderer.material.SetFloat("_FlashOpacity", 0f);
     }
 
     public override void OnUpdate()
