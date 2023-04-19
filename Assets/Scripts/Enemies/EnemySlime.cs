@@ -28,7 +28,7 @@ public class EnemySlime : Enemy
         var knockBackTime = .2f;
 
         rigidBody.velocity = (transform.position - e.collision.transform.position).normalized * knockBackVelocity;
-        enemyKnockbackState.Setup(knockBackTime);
+        enemyKnockbackState.Setup(knockBackTime, false);
         stateMachine.SetState(enemyKnockbackState);
     }
 

@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] internal SpriteRenderer spriteRenderer;
     [SerializeField] internal Color reColor;
     [SerializeField] internal List<Transform> patrolTransforms;
+    [SerializeField] internal AnimationCurve knockBackFlashOpacity;
 
     internal PatrolState patrolState;
     internal EnemyKnockbackState enemyKnockbackState;

@@ -89,6 +89,30 @@ MonoBehaviour:
   patrolTransforms:
   - {fileID: 3426749350471449177}
   - {fileID: 3426749350789700481}
+  knockBackFlashOpacity:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.063322835
+      outSlope: 0.063322835
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09673367
+    - serializedVersion: 3
+      time: 1
+      value: 0.000011079013
+      inSlope: -3.1828852
+      outSlope: -3.1828852
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.022613049
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &3426749350471449177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8597841049723712199, guid: 096859a4d73dee04a956d60d02edca27, type: 3}

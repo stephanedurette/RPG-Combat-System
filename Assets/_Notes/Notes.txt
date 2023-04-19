@@ -22,6 +22,9 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 
 -- TODO ----------------------------------------------------------------------------
 
+Today
+- lecture and implement 93, 96 and 98
+
 ---ENEMIES---
 
 implement arrow shooting enemy (keeps distance from player, moves slowly, launches projectile at player with varying accuracy)
