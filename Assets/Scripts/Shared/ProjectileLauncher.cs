@@ -26,7 +26,5 @@ public class ProjectileLauncher : MonoBehaviour
             DirectionUnitVector = transform.right,
             StartingPosition = transform.position
         });
-
-        Debug.Log("launching");
     }
 }

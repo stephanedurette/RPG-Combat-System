@@ -33,7 +33,7 @@ public class CollectionSO : ScriptableObject
 
     public CollectionSO Copy()
     {
-        CollectionSO copy = new CollectionSO();
+        CollectionSO copy = CreateInstance<CollectionSO>();
         copy.maxMaxValue = this.maxMaxValue;
         copy.maxValue = this.startingMaxValue;
         copy.currentValue = this.startingValue;

@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
         health.CurrentValue -= e.hitData.damage;
 
         rigidBody.velocity = (transform.position - e.other.transform.position).normalized * e.hitData.knockBackVelocity;
-        enemyKnockbackState.Setup(e.hitData.knockBackTime);
+        enemyKnockbackState.Setup(e.hitData.knockBackTime, true);
         stateMachine.SetState(enemyKnockbackState);
     }
 

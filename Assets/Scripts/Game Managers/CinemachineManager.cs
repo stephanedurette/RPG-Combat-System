@@ -7,6 +7,11 @@ public class CinemachineManager : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera playerFollowCamera;
 
+    private void Start()
+    {
+        EnableFollowCameraSnapping(false);
+    }
+
     public void EnableFollowCameraSnapping(bool enabled)
     {
         playerFollowCamera.GetCinemachineComponent<CinemachineTransposer>().m_XDamping = enabled ? 0 : 1;

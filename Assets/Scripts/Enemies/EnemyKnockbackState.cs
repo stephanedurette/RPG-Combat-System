@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,11 @@ public class EnemyKnockbackState : State
 
     private Enemy enemy;
 
-    private float knockBackTime;
+    private float hitKnockBackTime;
+    private float deathKnockBackTime = 1f;
+
     private bool hasBeenHit;
+    private bool hasBeenKilled;
 
     float timeSinceKnockedBack;
     public EnemyKnockbackState(object owner)
@@ -17,15 +21,27 @@ public class EnemyKnockbackState : State
         enemy = owner as Enemy;
     }
 
-    public void Setup(float knockBackTime, bool hasBeenHit = true)
+    public void Setup(float knockBackTime, bool hasBeenHit)
     {
-        this.knockBackTime = knockBackTime;
+        hasBeenKilled = enemy.health.CurrentValue <= 0;
+
+        this.hitKnockBackTime = knockBackTime;
         this.hasBeenHit = hasBeenHit;
+
     }
 
     public override void OnEnter()
     {
-        timer = new Timer(knockBackTime, enemy.OnDetectPlayer, enemy);
+        
+
+        if (hasBeenKilled)
+        {
+            timer = new Timer(deathKnockBackTime, () => GameObject.Destroy(enemy.gameObject), enemy);
+        } else
+        {
+            timer = new Timer(hitKnockBackTime, enemy.OnDetectPlayer, enemy);
+        }
+
         timeSinceKnockedBack = 0f;
     }
 
@@ -40,6 +56,12 @@ public class EnemyKnockbackState : State
         if (!hasBeenHit) return;
 
         timeSinceKnockedBack += Time.deltaTime;
-        enemy.spriteRenderer.material.SetFloat("_FlashOpacity", enemy.knockBackFlashOpacity.Evaluate(timeSinceKnockedBack / knockBackTime));
+
+        enemy.spriteRenderer.material.SetFloat("_FlashOpacity", enemy.knockBackFlashOpacity.Evaluate(timeSinceKnockedBack / hitKnockBackTime));
+
+        if (!hasBeenKilled) return;
+
+        enemy.spriteRenderer.material.SetFloat("_Dissolve", 1 - timeSinceKnockedBack / deathKnockBackTime);
+
     }
 }
