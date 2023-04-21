@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] internal float dashSpeed = 10f;
     [SerializeField] internal float dashTime = 1f;
     [SerializeField] internal float dashCooldown = 1f;
+    [SerializeField] internal TrailRenderer trailRenderer;
     [SerializeField] internal AnimationCurve dashSpeedOverTime;
     [Header("Weapons")]
     [SerializeField] private PickupData startingWeaponPickupData;

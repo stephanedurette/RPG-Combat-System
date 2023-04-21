@@ -23,7 +23,9 @@ Course this is based on: https://www.udemy.com/course/make-games-without-code-un
 -- TODO ----------------------------------------------------------------------------
 
 Today
-- lecture and implement 93, 96 and 98
+- lecture and implement the following
+	- arrows that destroy on contact with walls + trail
+	- battle spawn area
 
 ---ENEMIES---
 

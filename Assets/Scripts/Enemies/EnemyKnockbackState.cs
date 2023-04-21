@@ -10,7 +10,7 @@ public class EnemyKnockbackState : State
     private Enemy enemy;
 
     private float hitKnockBackTime;
-    private float deathKnockBackTime = 1f;
+    private float deathKnockBackTime = .5f;
 
     private bool hasBeenHit;
     private bool hasBeenKilled;
