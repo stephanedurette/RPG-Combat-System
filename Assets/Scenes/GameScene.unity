@@ -3509,7 +3509,7 @@ GameObject:
   - component: {fileID: 725755142}
   - component: {fileID: 725755144}
   - component: {fileID: 725755143}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Large Tilemap Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27007,7 +27007,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  startingWeaponPickupData: {fileID: 11400000, guid: 40a94635aec5c244aa0e68aac457426d, type: 2}
+  startingWeaponPickupData: {fileID: 11400000, guid: e923ff37ce3f0db4c9d0b633babded5c, type: 2}
   weaponParent: {fileID: 374082285}
   shieldDuration: 2
   shieldObject: {fileID: 1748453272}

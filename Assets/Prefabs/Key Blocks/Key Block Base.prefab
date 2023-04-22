@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 3680058825991041698}
   - component: {fileID: 3680058825991041696}
   - component: {fileID: 3680058825991041699}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Key Block Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
