@@ -119,6 +119,22 @@ SpriteAtlas:
     - 90e6ba014f4686443b359779d6453697: 1454941632
     - 90e6ba014f4686443b359779d6453697: 1361195201
     - 90e6ba014f4686443b359779d6453697: 1746185605
+    - 9fb9a773a4c00704ab616f38b5a53eac: 356163629
+    - 9fb9a773a4c00704ab616f38b5a53eac: -1960067134
+    - 9fb9a773a4c00704ab616f38b5a53eac: 1548158949
+    - 9fb9a773a4c00704ab616f38b5a53eac: -214797913
+    - 9fb9a773a4c00704ab616f38b5a53eac: -1546549531
+    - 9fb9a773a4c00704ab616f38b5a53eac: -613912714
+    - 9fb9a773a4c00704ab616f38b5a53eac: 1366498857
+    - 9fb9a773a4c00704ab616f38b5a53eac: -1730575668
+    - 9fb9a773a4c00704ab616f38b5a53eac: -334720974
+    - 9fb9a773a4c00704ab616f38b5a53eac: -1892932385
+    - 9fb9a773a4c00704ab616f38b5a53eac: 241123395
+    - 9fb9a773a4c00704ab616f38b5a53eac: -489524703
+    - 9fb9a773a4c00704ab616f38b5a53eac: 329163898
+    - 9fb9a773a4c00704ab616f38b5a53eac: -936586744
+    - 9fb9a773a4c00704ab616f38b5a53eac: 257496301
+    - 9fb9a773a4c00704ab616f38b5a53eac: 294670150
     - 2ebb9b26a78889440bbd81091678550d: -1188058968
     - 2ebb9b26a78889440bbd81091678550d: 1046564251
     - 2ebb9b26a78889440bbd81091678550d: -273616946
@@ -395,6 +411,22 @@ SpriteAtlas:
   - {fileID: 1454941632, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1361195201, guid: 90e6ba014f4686443b359779d6453697, type: 3}
   - {fileID: 1746185605, guid: 90e6ba014f4686443b359779d6453697, type: 3}
+  - {fileID: 356163629, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -1960067134, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: 1548158949, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -214797913, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -1546549531, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -613912714, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: 1366498857, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -1730575668, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -334720974, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -1892932385, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: 241123395, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -489524703, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: 329163898, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: -936586744, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: 257496301, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
+  - {fileID: 294670150, guid: 9fb9a773a4c00704ab616f38b5a53eac, type: 3}
   - {fileID: -1188058968, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
   - {fileID: 1046564251, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
   - {fileID: -273616946, guid: 2ebb9b26a78889440bbd81091678550d, type: 3}
@@ -670,6 +702,22 @@ SpriteAtlas:
   - Blue Key 4
   - Key Block
   - Settings Icon
+  - move up 2
+  - move up 1
+  - idle up 1
+  - idle up 2
+  - attack up
+  - idle down 2
+  - idle down 1
+  - Enemy Slime_15
+  - move left 2
+  - move left 1
+  - attack down
+  - move down 1
+  - move down 2
+  - idle right 2
+  - idle right 1
+  - attack right
   - Tileset_124
   - Tileset_112
   - Tileset_140

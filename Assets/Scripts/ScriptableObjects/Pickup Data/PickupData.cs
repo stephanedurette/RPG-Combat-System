@@ -6,6 +6,7 @@ using UnityEngine;
 public class PickupData : ScriptableObject
 {
     public PickupType pickupType;
+
     [Header("For Weapons")]
     //pickup type = weapon
     public WeaponType weaponType;
