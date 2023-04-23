@@ -1,5 +1,6 @@
 Course this is based on: https://www.udemy.com/course/make-games-without-code-unity-visual-scripting/learn/lecture/24212676#overview
 
+Sprite Resolver issues w/ blend tree: https://forum.unity.com/threads/sprite-resolver-with-2d-blend-tree.1387257/
 ----------------------------------- Modular Objects -------------------------------------------
 
 

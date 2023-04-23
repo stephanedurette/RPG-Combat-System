@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     internal Rigidbody2D rigidBody;
     internal Animator animator;
 
-    internal Vector2 lastMoveDirection = Vector2.zero;
+    internal Vector2 lastMoveDirection = Vector2.down;
 
     internal bool canDetectPlayer = true;
 
