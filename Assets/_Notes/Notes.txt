@@ -23,6 +23,12 @@ Sprite Resolver issues w/ blend tree: https://forum.unity.com/threads/sprite-res
 
 -- TODO ----------------------------------------------------------------------------
 
+- Refactor pickups to use inheritance
+- Change music
+- weapon swap / weapon upgrade system, w/ UI hotbar at the bottom to switch weapons
+- Import feel
+- screenshake / sounds on hit / damage
+
 
 ---ENEMIES---
 
